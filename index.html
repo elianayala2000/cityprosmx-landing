@@ -1,1 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityProsMX — Servicios del Hogar en Guadalajara</title>
+  <meta name="description" content="CityProsMX conecta clientes con los mejores prestadores de servicios del hogar en Guadalajara. Plomería, electricidad, pintura, carpintería, cerrajería y herrería." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --naranja: #FF6B35;
+      --azul: #1B3A5C;
+      --gris: #F5F5F5;
+      --texto: #1a1a18;
+      --secundario: #888780;
+      --borde: #F0F0F0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--texto);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    a { color: var(--naranja); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--azul);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--naranja); }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: #fff; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      background: var(--azul);
+      color: #fff;
+      padding: 80px 24px 100px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,107,53,0.2);
+      color: var(--naranja);
+      border: 1px solid rgba(255,107,53,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 span { color: var(--naranja); }
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--naranja);
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .hero-cta:hover { opacity: 0.9; text-decoration: none; }
+
+    /* SECTION */
+    section {
+      padding: 80px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    section.full {
+      max-width: 100%;
+      padding: 80px 0;
+      background: var(--gris);
+    }
+    section.full .inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--naranja);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 800;
+      color: var(--azul);
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      font-size: 17px;
+      color: var(--secundario);
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    /* COMO FUNCIONA */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .step {
+      text-align: center;
+    }
+    .step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--naranja);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .step h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+    .step p {
+      font-size: 14px;
+      color: var(--secundario);
+    }
+
+    /* CATEGORIAS */
+    .categorias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 0;
+    }
+    .categoria-card {
+      background: #fff;
+      border: 1.5px solid var(--borde);
+      border-radius: 16px;
+      padding: 24px 16px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .categoria-card:hover {
+      border-color: var(--naranja);
+      transform: translateY(-2px);
+    }
+    .categoria-icon { font-size: 32px; margin-bottom: 10px; }
+    .categoria-nombre {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--azul);
+    }
+
+    /* PLANES */
+    .planes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .plan-card {
+      background: #fff;
+      border: 1.5px solid var(--borde);
+      border-radius: 20px;
+      padding: 32px 28px;
+      position: relative;
+    }
+    .plan-card.destacado {
+      border-color: var(--naranja);
+      box-shadow: 0 8px 32px rgba(255,107,53,0.15);
+    }
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--naranja);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .plan-nombre {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--secundario);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+    .plan-precio {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--azul);
+      line-height: 1;
+    }
+    .plan-precio span {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--secundario);
+    }
+    .plan-desc {
+      font-size: 14px;
+      color: var(--secundario);
+      margin: 12px 0 20px;
+    }
+    .plan-features {
+      list-style: none;
+    }
+    .plan-features li {
+      font-size: 14px;
+      color: var(--texto);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--borde);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .plan-features li:last-child { border-bottom: none; }
+    .check { color: #0F6E56; font-weight: 700; }
+    .plan-nota {
+      font-size: 12px;
+      color: var(--secundario);
+      margin-top: 16px;
+      font-style: italic;
+    }
+
+    /* METODOS DE PAGO */
+    .metodos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .metodo-pill {
+      background: var(--gris);
+      border: 1.5px solid var(--borde);
+      border-radius: 12px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--azul);
+    }
+    .metodo-pill span { font-size: 22px; }
+
+    /* LEGAL */
+    .legal-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .legal-nav a {
+      background: var(--gris);
+      border: 1.5px solid var(--borde);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--azul);
+    }
+    .legal-nav a:hover {
+      border-color: var(--naranja);
+      color: var(--naranja);
+      text-decoration: none;
+    }
+    .legal-section {
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--borde);
+    }
+    .legal-section:last-child {
+      border-bottom: none;
+    }
+    .legal-section h2 {
+      font-size: 26px;
+      color: var(--azul);
+      margin-bottom: 8px;
+    }
+    .legal-fecha {
+      font-size: 13px;
+      color: var(--secundario);
+      margin-bottom: 24px;
+    }
+    .legal-section h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--azul);
+      margin: 24px 0 8px;
+    }
+    .legal-section p, .legal-section li {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.8;
+    }
+    .legal-section ul, .legal-section ol {
+      padding-left: 20px;
+      margin: 8px 0 16px;
+    }
+    .legal-section li { margin-bottom: 4px; }
+
+    /* FOOTER */
+    footer {
+      background: var(--azul);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-logo span { color: var(--naranja); }
+    .footer-desc {
+      font-size: 14px;
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border-radius: 10px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .social-btn:hover {
+      background: rgba(255,255,255,0.2);
+      text-decoration: none;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .planes { grid-template-columns: 1fr; }
+      .categorias { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">City<span>Pros</span>MX</div>
+  <ul class="nav-links">
+    <li><a href="#como-funciona">Cómo funciona</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#planes">Planes</a></li>
+    <li><a href="#legal">Legal</a></li>
+    <li><a href="https://www.facebook.com/profile.php?id=61576791698881" target="_blank" rel="noopener">Facebook</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🛠️ Guadalajara, Jalisco — México</div>
+  <h1>Conectamos a clientes con los mejores prestadores de <span>servicios del hogar</span></h1>
+  <p>Plomeros, electricistas, pintores, carpinteros, cerrajeros y herreros verificados en la Zona Metropolitana de Guadalajara.</p>
+  <a href="https://www.facebook.com/profile.php?id=61576791698881" target="_blank" rel="noopener" class="hero-cta">
+    Seguir en Facebook
+  </a>
+</div>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <div class="section-label">Proceso</div>
+  <h2>¿Cómo funciona CityProsMX?</h2>
+  <p class="section-desc">Conectamos clientes con prestadores de servicios del hogar de forma simple, rápida y segura a través de nuestra aplicación móvil.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Busca el servicio</h3>
+      <p>El cliente elige la categoría que necesita y ve una lista de prestadores disponibles cercanos.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Contacta al prestador</h3>
+      <p>El cliente inicia un chat directamente con el prestador para describir lo que necesita.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Recibe una cotización</h3>
+      <p>El prestador envía una cotización detallada con mano de obra y materiales. El cliente acepta o negocia.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Confirma y paga</h3>
+      <p>Al aceptar la cotización, el cliente selecciona el método de pago y confirma el servicio.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <h3>Servicio completado</h3>
+      <p>Ambas partes confirman el trabajo terminado. El cliente puede dejar una reseña al prestador.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="full" id="servicios">
+  <div class="inner">
+    <div class="section-label">Categorías</div>
+    <h2>Servicios disponibles</h2>
+    <p class="section-desc">Ofrecemos 6 categorías con más de 60 servicios específicos para el hogar en Guadalajara y zona metropolitana.</p>
+    <div class="categorias">
+      <div class="categoria-card">
+        <div class="categoria-icon">🔧</div>
+        <div class="categoria-nombre">Plomería</div>
+      </div>
+      <div class="categoria-card">
+        <div class="categoria-icon">⚡</div>
+        <div class="categoria-nombre">Electricidad</div>
+      </div>
+      <div class="categoria-card">
+        <div class="categoria-icon">🖌️</div>
+        <div class="categoria-nombre">Pintura</div>
+      </div>
+      <div class="categoria-card">
+        <div class="categoria-icon">🪵</div>
+        <div class="categoria-nombre">Carpintería</div>
+      </div>
+      <div class="categoria-card">
+        <div class="categoria-icon">🔑</div>
+        <div class="categoria-nombre">Cerrajería</div>
+      </div>
+      <div class="categoria-card">
+        <div class="categoria-icon">⚙️</div>
+        <div class="categoria-nombre">Herrería</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes">
+  <div class="section-label">Para prestadores de servicio</div>
+  <h2>Planes y precios</h2>
+  <p class="section-desc">Los prestadores de servicios pagan una suscripción mensual para aparecer en la plataforma. Los clientes no pagan nada por usar la app.</p>
+  <div class="planes">
+
+    <div class="plan-card">
+      <div class="plan-nombre">Básico</div>
+      <div class="plan-precio">$0 <span>/ mes</span></div>
+      <div class="plan-desc">Para comenzar sin costo</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Hasta 3 conversaciones activas</li>
+        <li><span class="check">✓</span> Perfil público visible</li>
+        <li><span class="check">✓</span> Cotizaciones ilimitadas</li>
+        <li><span class="check">✓</span> Chat con clientes</li>
+      </ul>
+    </div>
+
+    <div class="plan-card destacado">
+      <div class="plan-badge">⭐ Más popular</div>
+      <div class="plan-nombre">Pro</div>
+      <div class="plan-precio">$299 <span>MXN / mes</span></div>
+      <div class="plan-desc">Para crecer tu negocio</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Conversaciones ilimitadas</li>
+        <li><span class="check">✓</span> Apareces antes que Básico</li>
+        <li><span class="check">✓</span> Badge de plan en tu perfil</li>
+        <li><span class="check">✓</span> Estadísticas de rendimiento</li>
+        <li><span class="check">✓</span> Soporte prioritario</li>
+      </ul>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-nombre">Premium</div>
+      <div class="plan-precio">$499 <span>MXN / mes</span></div>
+      <div class="plan-desc">Máxima visibilidad garantizada</div>
+      <ul class="plan-features">
+        <li><span class="check">✓</span> Todo lo del plan Pro</li>
+        <li><span class="check">✓</span> Apareces primero siempre</li>
+        <li><span class="check">✓</span> Badge ★ Destacado</li>
+        <li><span class="check">✓</span> Posicionamiento premium</li>
+        <li><span class="check">✓</span> Soporte preferencial</li>
+      </ul>
+    </div>
+
+  </div>
+  <p class="plan-nota" style="margin-top:24px; font-size:13px; color:var(--secundario);">
+    * Los primeros 50 prestadores registrados reciben 3 meses del plan Pro sin costo, con badge de Fundador permanente.
+    Los precios incluyen IVA. El cobro es mensual y puede cancelarse en cualquier momento.
+  </p>
+
+  <!-- METODOS DE PAGO -->
+  <h3 style="font-size:18px; font-weight:700; color:var(--azul); margin-top:56px; margin-bottom:8px;">Métodos de pago aceptados</h3>
+  <p style="font-size:15px; color:var(--secundario); margin-bottom:0;">Los clientes pueden pagar los servicios con cualquiera de los siguientes métodos:</p>
+  <div class="metodos">
+    <div class="metodo-pill"><span>💵</span> Efectivo</div>
+    <div class="metodo-pill"><span>💳</span> Tarjeta de crédito / débito</div>
+    <div class="metodo-pill"><span>🏦</span> SPEI / Transferencia bancaria</div>
+    <div class="metodo-pill"><span>🏪</span> Oxxo Pay</div>
+  </div>
+  <p style="font-size:13px; color:var(--secundario); margin-top:16px;">
+    Los pagos con tarjeta y Oxxo Pay son procesados de forma segura a través de Conekta, plataforma certificada PCI-DSS.
+  </p>
+</section>
+
+<!-- LEGAL -->
+<section class="full" id="legal">
+  <div class="inner">
+    <div class="section-label">Documentos legales</div>
+    <h2>Información legal</h2>
+    <p class="section-desc">Consulta nuestros términos, políticas de privacidad y política de devoluciones.</p>
+
+    <div class="legal-nav">
+      <a href="#terminos">Términos y Condiciones</a>
+      <a href="#privacidad">Aviso de Privacidad</a>
+      <a href="#devoluciones">Política de Cancelaciones y Reembolsos</a>
+    </div>
+
+    <!-- TERMINOS Y CONDICIONES -->
+    <div class="legal-section" id="terminos">
+      <h2>Términos y Condiciones de Uso</h2>
+      <p class="legal-fecha">Última actualización: 2026. Versión 1.0</p>
+
+      <p>Bienvenido a CityProsMX ("la Plataforma"), operada por Elian Rodriguez Ayala ("CityProsMX", "nosotros" o "la Empresa"). Al acceder o usar nuestra aplicación móvil y sitio web, aceptas quedar vinculado por estos Términos y Condiciones ("T&C"). Si no estás de acuerdo, no uses la Plataforma.</p>
+
+      <h3>1. Definiciones</h3>
+      <ul>
+        <li><strong>Plataforma:</strong> La aplicación móvil CityProsMX y el presente sitio web.</li>
+        <li><strong>Cliente:</strong> Persona que utiliza la Plataforma para contratar servicios del hogar.</li>
+        <li><strong>Prestador:</strong> Persona física que ofrece servicios del hogar a través de la Plataforma.</li>
+        <li><strong>Servicio:</strong> Trabajo de plomería, electricidad, pintura, carpintería, cerrajería o herrería contratado a través de la Plataforma.</li>
+      </ul>
+
+      <h3>2. Descripción del servicio</h3>
+      <p>CityProsMX es una plataforma de intermediación digital que conecta a Clientes con Prestadores de servicios del hogar en la Zona Metropolitana de Guadalajara, Jalisco, México. CityProsMX no presta directamente los servicios; actúa exclusivamente como intermediario tecnológico.</p>
+
+      <h3>3. Registro y cuenta de usuario</h3>
+      <p>Para usar la Plataforma debes registrarte proporcionando información veraz, completa y actualizada. Eres responsable de mantener la confidencialidad de tu cuenta. CityProsMX se reserva el derecho de suspender o cancelar cuentas que violen estos T&C.</p>
+
+      <h3>4. Obligaciones del Cliente</h3>
+      <ul>
+        <li>Proporcionar información precisa sobre el servicio requerido.</li>
+        <li>Estar presente o designar a un responsable durante la prestación del servicio.</li>
+        <li>Pagar el monto acordado en la cotización aceptada.</li>
+        <li>Tratar al Prestador con respeto y profesionalismo.</li>
+      </ul>
+
+      <h3>5. Obligaciones del Prestador</h3>
+      <ul>
+        <li>Contar con las habilidades y herramientas necesarias para los servicios que ofrece.</li>
+        <li>Presentarse puntualmente y realizar el trabajo cotizado.</li>
+        <li>Emitir cotizaciones verídicas y completas.</li>
+        <li>Mantener trato profesional y respetuoso con los Clientes.</li>
+        <li>Cumplir con las leyes y regulaciones aplicables a su actividad.</li>
+      </ul>
+
+      <h3>6. Proceso de cotización y pago</h3>
+      <p>El Prestador envía una cotización detallada con mano de obra y materiales. El Cliente puede aceptar o rechazar la cotización. Una vez aceptada, el Cliente tiene 30 minutos para cancelar sin costo. Los pagos son procesados a través de métodos electrónicos seguros. CityProsMX actúa como intermediario en los pagos con tarjeta y Oxxo, y para SPEI el cliente transfiere directamente al Prestador.</p>
+
+      <h3>7. Comisiones y suscripciones</h3>
+      <p>Los Prestadores pagan una suscripción mensual para acceder a la Plataforma según el plan elegido (Básico, Pro o Premium). El Cliente siempre paga el monto total de la cotización; las comisiones de procesamiento de pago son absorbidas por el Prestador, en cumplimiento con la Ley Federal de Protección al Consumidor (LFPC).</p>
+
+      <h3>8. Verificación de identidad</h3>
+      <p>CityProsMX ofrece un proceso voluntario de verificación de identidad para Prestadores mediante documento oficial (INE) y selfie. Los Prestadores verificados obtienen un badge visible en su perfil. La verificación es realizada por CityProsMX de forma manual.</p>
+
+      <h3>9. Responsabilidad limitada</h3>
+      <p>CityProsMX actúa como intermediario y no es responsable por la calidad, puntualidad, legalidad ni resultado de los servicios prestados por los Prestadores. Los Clientes contratan directamente con los Prestadores. CityProsMX no garantiza la disponibilidad continua e ininterrumpida de la Plataforma.</p>
+
+      <h3>10. Propiedad intelectual</h3>
+      <p>Todos los derechos de propiedad intelectual sobre la Plataforma, su diseño, código, marca y contenido son propiedad de CityProsMX. Se prohíbe su reproducción, distribución o modificación sin autorización escrita.</p>
+
+      <h3>11. Cancelación y suspensión</h3>
+      <p>CityProsMX puede suspender o cancelar cuentas que incumplan estos T&C, sin previo aviso y sin responsabilidad. Los Prestadores con plan de pago no recibirán reembolso por el período restante si son cancelados por incumplimiento.</p>
+
+      <h3>12. Modificaciones</h3>
+      <p>CityProsMX puede modificar estos T&C en cualquier momento. Los cambios entrarán en vigor al ser publicados en la Plataforma. El uso continuado implica aceptación de los nuevos términos.</p>
+
+      <h3>13. Ley aplicable</h3>
+      <p>Estos T&C se rigen por las leyes vigentes en los Estados Unidos Mexicanos. Cualquier controversia se someterá a la jurisdicción de los tribunales competentes de Guadalajara, Jalisco, México.</p>
+
+      <h3>14. Contacto</h3>
+      <p>Para cualquier duda sobre estos Términos y Condiciones, contacta a: <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a></p>
+    </div>
+
+    <!-- AVISO DE PRIVACIDAD -->
+    <div class="legal-section" id="privacidad">
+      <h2>Aviso de Privacidad</h2>
+      <p class="legal-fecha">Última actualización: 2026. Versión 1.0</p>
+
+      <p>CityProsMX, operada por Elian Rodriguez Ayala, con domicilio en Guadalajara, Jalisco, México, es responsable del tratamiento de sus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).</p>
+
+      <h3>1. Datos personales que recopilamos</h3>
+      <p><strong>De Clientes:</strong></p>
+      <ul>
+        <li>Nombre completo, correo electrónico, número de teléfono</li>
+        <li>Dirección del servicio, municipio, coordenadas GPS</li>
+        <li>Información de pago (tokenizada, no almacenamos números completos de tarjeta)</li>
+        <li>Foto de perfil (opcional)</li>
+      </ul>
+      <p style="margin-top:12px;"><strong>De Prestadores:</strong></p>
+      <ul>
+        <li>Nombre completo, correo electrónico, número de teléfono</li>
+        <li>Dirección, municipios de servicio, coordenadas GPS</li>
+        <li>Fotografías de identificación oficial (INE) para verificación de identidad</li>
+        <li>Selfie para verificación</li>
+        <li>CLABE interbancaria para recepción de pagos</li>
+        <li>Descripción de servicios, precio base, fotografías de trabajos</li>
+      </ul>
+
+      <h3>2. Finalidades del tratamiento</h3>
+      <p><strong>Finalidades primarias (necesarias):</strong></p>
+      <ul>
+        <li>Crear y gestionar tu cuenta en la Plataforma</li>
+        <li>Facilitar la conexión entre Clientes y Prestadores</li>
+        <li>Procesar pagos y gestionar transacciones</li>
+        <li>Verificar la identidad de los Prestadores</li>
+        <li>Resolver disputas y reportes de problemas</li>
+        <li>Cumplir con obligaciones legales</li>
+      </ul>
+      <p style="margin-top:12px;"><strong>Finalidades secundarias (mejora del servicio):</strong></p>
+      <ul>
+        <li>Análisis estadístico y mejora de la Plataforma</li>
+        <li>Comunicaciones sobre nuevas funciones o cambios en el servicio</li>
+      </ul>
+
+      <h3>3. Transferencia de datos</h3>
+      <p>Sus datos personales pueden ser compartidos con:</p>
+      <ul>
+        <li><strong>Supabase Inc.:</strong> Proveedor de base de datos en la nube (infraestructura)</li>
+        <li><strong>Conekta:</strong> Procesamiento de pagos electrónicos (PCI-DSS certificado)</li>
+        <li><strong>Autoridades competentes:</strong> Cuando sea requerido por ley</li>
+      </ul>
+      <p>No vendemos, arrendamos ni transferimos sus datos a terceros con fines comerciales.</p>
+
+      <h3>4. Derechos ARCO</h3>
+      <p>Tienes derecho a Acceder, Rectificar, Cancelar u Oponerte al tratamiento de tus datos personales (derechos ARCO). Para ejercerlos, envía una solicitud a: <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a> con el asunto "Derechos ARCO". Responderemos en un plazo máximo de 20 días hábiles.</p>
+
+      <h3>5. Seguridad de los datos</h3>
+      <p>Implementamos medidas técnicas y organizativas para proteger tus datos, incluyendo cifrado en tránsito (HTTPS/TLS), acceso restringido a la base de datos, y tokens de pago en lugar de datos completos de tarjeta.</p>
+
+      <h3>6. Retención de datos</h3>
+      <p>Conservamos tus datos mientras tengas una cuenta activa en la Plataforma y durante el período requerido por las leyes fiscales y comerciales aplicables en México (mínimo 5 años). Al eliminar tu cuenta, tus datos personales serán anonimizados o eliminados dentro de los 30 días siguientes.</p>
+
+      <h3>7. Uso de cookies y tecnologías de seguimiento</h3>
+      <p>La aplicación móvil no usa cookies. El sitio web puede utilizar tecnologías de análisis de tráfico básico (sin seguimiento de identificación personal) para mejorar la experiencia del usuario.</p>
+
+      <h3>8. Cambios al Aviso de Privacidad</h3>
+      <p>Este Aviso puede ser modificado. Notificaremos cambios relevantes a través de la Plataforma. Puedes consultar la versión vigente en cualquier momento en este sitio web.</p>
+
+      <h3>9. Contacto</h3>
+      <p>Responsable: Elian Rodriguez Ayala<br>
+      Correo: <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a><br>
+      Ubicación: Guadalajara, Jalisco, México</p>
+    </div>
+
+    <!-- POLITICA DE CANCELACIONES -->
+    <div class="legal-section" id="devoluciones">
+      <h2>Política de Cancelaciones y Reembolsos</h2>
+      <p class="legal-fecha">Última actualización: 2026. Versión 1.0</p>
+
+      <p>CityProsMX es una plataforma de intermediación. Los servicios son prestados directamente por los Prestadores. Esta política aplica a las transacciones realizadas dentro de la Plataforma.</p>
+
+      <h3>1. Cancelación por el Cliente</h3>
+      <p>El Cliente puede cancelar un servicio confirmado dentro de los <strong>30 minutos posteriores a la aceptación de la cotización</strong>, sin costo alguno. La cancelación debe realizarse desde la propia Plataforma seleccionando el motivo correspondiente. Pasados los 30 minutos, la cancelación queda a criterio del Prestador.</p>
+
+      <h3>2. Cancelación por el Prestador</h3>
+      <p>Si el Prestador cancela o no se presenta al servicio acordado, el Cliente podrá reportar el problema a través de la Plataforma. CityProsMX evaluará el caso y podrá gestionar el reembolso correspondiente cuando aplique.</p>
+
+      <h3>3. Reembolsos por pago electrónico</h3>
+      <p>Para pagos realizados con tarjeta de crédito o débito a través de Conekta:</p>
+      <ul>
+        <li>Las cancelaciones dentro del período de 30 minutos generan un reembolso completo al método de pago original.</li>
+        <li>El tiempo de acreditación del reembolso es de <strong>5 a 10 días hábiles</strong> dependiendo del banco emisor.</li>
+        <li>Las comisiones de procesamiento de Conekta no son reembolsables en cancelaciones fuera del período establecido.</li>
+      </ul>
+
+      <h3>4. Reembolsos por Oxxo Pay</h3>
+      <p>Los pagos realizados en Oxxo son procesados a través de Conekta. Para solicitar un reembolso, el Cliente debe contactar a CityProsMX directamente con el número de referencia de pago. Los reembolsos de Oxxo se realizan mediante transferencia bancaria (SPEI) a la cuenta que el Cliente proporcione.</p>
+
+      <h3>5. Pagos en efectivo y SPEI</h3>
+      <p>Los pagos en efectivo y por SPEI son acordados y ejecutados directamente entre el Cliente y el Prestador. CityProsMX no interviene en la transacción y no gestiona reembolsos de estos métodos de pago. Cualquier disputa debe resolverse entre las partes.</p>
+
+      <h3>6. Servicios no completados o con problemas</h3>
+      <p>Si el servicio no fue completado satisfactoriamente, el Cliente puede reportar el problema desde la Plataforma dentro de las 48 horas siguientes a la conclusión del trabajo. CityProsMX evaluará el caso y actuará como mediador. Si se determina que el Prestador incumplió, se aplicarán las medidas correspondientes incluyendo la gestión del reembolso cuando aplique.</p>
+
+      <h3>7. Suscripciones de Prestadores</h3>
+      <p>Las suscripciones mensuales de Prestadores (planes Pro y Premium) no son reembolsables una vez iniciado el período mensual. El Prestador puede cancelar su suscripción en cualquier momento y continuará teniendo acceso hasta el final del período pagado.</p>
+
+      <h3>8. Contacto para reembolsos</h3>
+      <p>Para solicitar un reembolso o reportar un problema de pago, contáctanos en: <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a> con el asunto "Reembolso" e incluye tu nombre, correo registrado y descripción del caso.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">City<span>Pros</span>MX</div>
+  <p class="footer-desc">Marketplace de servicios del hogar en Guadalajara, Jalisco, México. Conectamos clientes con prestadores verificados.</p>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/profile.php?id=61576791698881" target="_blank" rel="noopener" class="social-btn">
+      📘 Facebook
+    </a>
+  </div>
+  <div class="footer-links">
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#planes">Planes y precios</a>
+    <a href="#terminos">Términos y Condiciones</a>
+    <a href="#privacidad">Aviso de Privacidad</a>
+    <a href="#devoluciones">Cancelaciones y Reembolsos</a>
+    <a href="mailto:elian.ayala02062000@gmail.com">Contacto</a>
+  </div>
+  <p class="footer-copy">© 2026 CityProsMX · Guadalajara, Jalisco, México · Todos los derechos reservados</p>
+</footer>
+
+</body>
+</html>
