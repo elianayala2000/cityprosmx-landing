@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviso de Privacidad — CityProsMX</title>
+  <meta name="description" content="Aviso de Privacidad de CityProsMX conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) vigente en México." />
+  <meta name="robots" content="index, follow" />
+  <style>
+    :root {
+      --naranja: #FF6B35;
+      --azul: #1B3A5C;
+      --gris: #F5F5F5;
+      --texto: #1a1a18;
+      --secundario: #888780;
+      --borde: #F0F0F0;
+      --verde: #0F6E56;
+      --rojo: #D32F2F;
+      --amarillo: #C9952A;
+      --azul-claro: rgba(27, 58, 92, 0.05);
+      --verde-claro: rgba(15, 110, 86, 0.08);
+      --amarillo-claro: rgba(201, 149, 42, 0.1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--texto);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    a { color: var(--naranja); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--azul);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--naranja); }
+    .nav-back {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-back:hover { color: #fff; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      background: var(--azul);
+      color: #fff;
+      padding: 56px 24px 64px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 12px;
+    }
+    .hero-meta {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-meta span {
+      background: rgba(255,255,255,0.1);
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+
+    /* LAYOUT 2 COLUMNAS */
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+    }
+
+    /* TOC STICKY */
+    .toc {
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      background: var(--gris);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 13px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
+    .toc h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--secundario);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+    .toc ol li {
+      counter-increment: toc;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--borde);
+    }
+    .toc ol li:last-child { border-bottom: none; }
+    .toc ol li::before {
+      content: counter(toc) ". ";
+      color: var(--secundario);
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .toc a {
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .toc a:hover { color: var(--naranja); text-decoration: none; }
+
+    /* MAIN */
+    main { min-width: 0; }
+
+    section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--azul);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--naranja);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--azul);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--texto);
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      font-size: 15px;
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    li {
+      margin-bottom: 6px;
+      color: var(--texto);
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: var(--azul-claro);
+      border-left: 4px solid var(--azul);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .callout strong { color: var(--azul); }
+
+    .callout-warning {
+      background: var(--amarillo-claro);
+      border-left-color: var(--amarillo);
+    }
+    .callout-warning strong { color: var(--amarillo); }
+
+    /* TABLA DE TERCEROS */
+    .tabla-terceros {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+    }
+    .tabla-terceros thead {
+      background: var(--azul);
+      color: #fff;
+    }
+    .tabla-terceros th {
+      padding: 12px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .tabla-terceros td {
+      padding: 12px;
+      border-bottom: 1px solid var(--borde);
+      vertical-align: top;
+    }
+    .tabla-terceros tr:last-child td { border-bottom: none; }
+    .tabla-terceros td strong { color: var(--azul); }
+
+    /* FOOTER */
+    footer {
+      background: var(--azul);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 20px;
+      }
+      .toc {
+        position: static;
+        max-height: none;
+      }
+      .hero { padding: 40px 20px 48px; }
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 19px; }
+      .tabla-terceros { font-size: 13px; }
+      .tabla-terceros th, .tabla-terceros td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">City<span>Pros</span>MX</div>
+    <a href="/" class="nav-back">← Volver al inicio</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Aviso de Privacidad</h1>
+    <div class="hero-meta">
+      <span>Versión 2.0</span>
+      <span>Vigente desde mayo de 2026</span>
+      <span>Conforme a LFPDPPP México</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside class="toc">
+      <h4>Contenido</h4>
+      <ol>
+        <li><a href="#responsable">Responsable del tratamiento</a></li>
+        <li><a href="#datos-recopilados">Datos personales recopilados</a></li>
+        <li><a href="#finalidades">Finalidades del tratamiento</a></li>
+        <li><a href="#fundamento-legal">Fundamento legal</a></li>
+        <li><a href="#terceros">Compartición con terceros</a></li>
+        <li><a href="#transferencias">Transferencias internacionales</a></li>
+        <li><a href="#derechos-arco">Derechos ARCO</a></li>
+        <li><a href="#seguridad">Medidas de seguridad</a></li>
+        <li><a href="#retencion">Retención y supresión</a></li>
+        <li><a href="#cookies">Cookies y tracking</a></li>
+        <li><a href="#menores">Menores de edad</a></li>
+        <li><a href="#cambios">Cambios al aviso</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ol>
+    </aside>
+
+    <main>
+
+      <section id="responsable">
+        <h2>1. Identidad y domicilio del responsable</h2>
+        <p>De conformidad con los artículos 14, 15 y 16 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) vigente en los Estados Unidos Mexicanos, ponemos a tu disposición el presente Aviso de Privacidad.</p>
+        <p><strong>Responsable del tratamiento de datos personales:</strong></p>
+        <ul>
+          <li><strong>Nombre:</strong> Elian Rodriguez Ayala (persona física con actividad empresarial)</li>
+          <li><strong>Marca comercial:</strong> CityProsMX</li>
+          <li><strong>Domicilio:</strong> Guadalajara, Jalisco, México</li>
+          <li><strong>Correo de contacto:</strong> <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a></li>
+          <li><strong>Sitio web:</strong> <a href="/">cityprosmx-landing.vercel.app</a></li>
+        </ul>
+        <p>CityProsMX es una plataforma de intermediación digital ("la Plataforma") que conecta a Clientes con Prestadores de servicios del hogar en la Zona Metropolitana de Guadalajara, mediante una aplicación móvil disponible en iOS y Android, y este sitio web.</p>
+      </section>
+
+      <section id="datos-recopilados">
+        <h2>2. Datos personales que recopilamos</h2>
+        <p>Recopilamos diferentes categorías de datos según el rol del usuario en la Plataforma. Solo solicitamos los datos estrictamente necesarios para las finalidades declaradas en este aviso.</p>
+
+        <h3>2.1 Datos comunes a todos los usuarios</h3>
+        <ul>
+          <li><strong>Identificación:</strong> nombre completo, correo electrónico, número de teléfono celular</li>
+          <li><strong>Autenticación:</strong> contraseña cifrada (nunca almacenada en texto plano), sesiones activas</li>
+          <li><strong>Geolocalización aproximada:</strong> ciudad o municipio, coordenadas GPS si autorizas el permiso de ubicación. La geolocalización exacta se usa únicamente para mostrar prestadores cercanos y no se almacena indefinidamente</li>
+          <li><strong>Información del dispositivo:</strong> sistema operativo (iOS o Android), versión de la app, modelo de dispositivo, identificador de notificaciones push (Expo Push Token)</li>
+          <li><strong>Foto de perfil:</strong> opcional, subida voluntariamente por el usuario</li>
+          <li><strong>Registros de uso:</strong> fechas de inicio de sesión, conversaciones iniciadas, búsquedas realizadas, prestadores favoritos</li>
+        </ul>
+
+        <h3>2.2 Datos específicos de Clientes</h3>
+        <ul>
+          <li><strong>Dirección del servicio:</strong> dirección completa donde se realizará el trabajo, referencias, código postal</li>
+          <li><strong>Información de pago:</strong> en pagos con tarjeta procesados a través de Stripe, los datos completos de tu tarjeta (número, CVV, fecha de vencimiento) NO son almacenados por CityProsMX. Stripe maneja directamente esta información mediante tokenización conforme al estándar PCI-DSS Level 1. Solo guardamos un identificador de método de pago (token) y los últimos 4 dígitos de la tarjeta</li>
+          <li><strong>CLABE bancaria del cliente:</strong> opcional, solo si solicitas reembolsos vía SPEI</li>
+          <li><strong>Reseñas y calificaciones:</strong> texto y estrellas que dejas a prestadores</li>
+        </ul>
+
+        <h3>2.3 Datos específicos de Prestadores</h3>
+        <ul>
+          <li><strong>Identificación oficial:</strong> fotografía de tu Credencial para Votar (INE) por ambos lados, para verificación de identidad</li>
+          <li><strong>Selfie de verificación:</strong> fotografía facial reciente para confirmar que coincides con la INE</li>
+          <li><strong>Datos profesionales:</strong> descripción de servicios, años de experiencia, categorías de servicio, fotografías de trabajos realizados (portafolio), zona de cobertura</li>
+          <li><strong>CLABE bancaria del prestador:</strong> obligatoria para recibir pagos del flujo SPEI directamente del cliente, y para recibir transferencias de Stripe Connect cuando los pagos se procesan vía tarjeta</li>
+          <li><strong>RFC:</strong> opcional, para emisión de comprobantes fiscales digitales (CFDI) cuando el prestador lo requiera</li>
+          <li><strong>Información de la cuenta de Stripe Connect:</strong> ID de cuenta conectada generado por Stripe, estado de verificación, capacidad de recibir pagos</li>
+        </ul>
+
+        <div class="callout">
+          <strong>Datos sensibles:</strong> No recopilamos datos sensibles en el sentido del Artículo 3 fracción VI de la LFPDPPP (origen racial, salud, creencias religiosas, opiniones políticas, vida sexual). La fotografía de tu INE se considera dato de identificación, no sensible, y se trata con medidas de seguridad reforzadas.
+        </div>
+      </section>
+
+      <section id="finalidades">
+        <h2>3. Finalidades del tratamiento</h2>
+        <p>Tratamos tus datos personales únicamente para las finalidades descritas a continuación.</p>
+
+        <h3>3.1 Finalidades primarias (necesarias para el servicio)</h3>
+        <p>Las siguientes finalidades son necesarias para que puedas usar la Plataforma. Si te opones al tratamiento para estas finalidades, no podremos brindarte el servicio:</p>
+        <ul>
+          <li>Crear, gestionar y mantener tu cuenta de usuario</li>
+          <li>Conectar Clientes con Prestadores cercanos según la categoría de servicio solicitada</li>
+          <li>Permitir la comunicación directa por chat entre Clientes y Prestadores</li>
+          <li>Procesar pagos a través de Stripe (tarjeta) o facilitar transferencias SPEI directas entre Cliente y Prestador</li>
+          <li>Verificar la identidad de los Prestadores mediante revisión manual de INE y selfie</li>
+          <li>Enviar notificaciones push sobre mensajes nuevos, cotizaciones recibidas, cambios de estado del servicio y eventos relevantes</li>
+          <li>Resolver disputas, reclamaciones y reportes de problemas entre las partes</li>
+          <li>Cumplir con obligaciones legales y fiscales aplicables (CFF, LFPC, LFPDPPP)</li>
+          <li>Prevenir fraude, abuso de la Plataforma y actividades ilícitas</li>
+          <li>Proporcionar soporte técnico y atención al cliente</li>
+        </ul>
+
+        <h3>3.2 Finalidades secundarias (mejora del servicio)</h3>
+        <p>Las siguientes finalidades NO son necesarias para el servicio. Puedes oponerte a estas en cualquier momento sin afectar tu uso de la Plataforma, escribiendo a <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a>:</p>
+        <ul>
+          <li>Análisis estadístico agregado del uso de la Plataforma para identificar patrones y mejorar funciones</li>
+          <li>Comunicaciones por correo electrónico sobre nuevas funciones, cambios en planes, o actualizaciones relevantes del servicio</li>
+          <li>Encuestas voluntarias de satisfacción</li>
+        </ul>
+
+        <p><strong>No vendemos, arrendamos ni cedemos tus datos personales con fines comerciales a terceros.</strong></p>
+      </section>
+
+      <section id="fundamento-legal">
+        <h2>4. Fundamento legal del tratamiento</h2>
+        <p>El tratamiento de tus datos personales se fundamenta en:</p>
+        <ul>
+          <li><strong>Consentimiento expreso:</strong> al registrarte en la Plataforma aceptas este Aviso de Privacidad y nuestros Términos y Condiciones (Art. 8 LFPDPPP)</li>
+          <li><strong>Cumplimiento de la relación contractual:</strong> al solicitar o prestar un servicio a través de la Plataforma se establece una relación jurídica que requiere el tratamiento de ciertos datos (Art. 10 LFPDPPP)</li>
+          <li><strong>Cumplimiento de obligaciones legales:</strong> conservación de comprobantes fiscales (Código Fiscal de la Federación, Art. 30), obligaciones de transparencia frente al consumidor (Ley Federal de Protección al Consumidor)</li>
+          <li><strong>Interés legítimo:</strong> prevención de fraude y protección de la integridad de la Plataforma (Art. 10 LFPDPPP)</li>
+        </ul>
+      </section>
+
+      <section id="terceros">
+        <h2>5. Compartición de datos con terceros</h2>
+        <p>Compartimos datos personales con los siguientes terceros, exclusivamente para los fines indicados y bajo acuerdos de confidencialidad y procesamiento de datos:</p>
+
+        <table class="tabla-terceros">
+          <thead>
+            <tr>
+              <th>Tercero</th>
+              <th>Finalidad</th>
+              <th>Datos compartidos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Supabase Inc.</strong><br>(EE.UU.)</td>
+              <td>Infraestructura de base de datos, autenticación y almacenamiento de archivos</td>
+              <td>Todos los datos descritos en sección 2, cifrados en reposo y en tránsito</td>
+            </tr>
+            <tr>
+              <td><strong>Stripe, Inc.</strong><br>(EE.UU.)</td>
+              <td>Procesamiento de pagos con tarjeta, transferencias a prestadores vía Stripe Connect, prevención de fraude</td>
+              <td>Nombre, correo, datos de tarjeta (tokenizados), monto, CLABE de prestadores, ID de cuenta Connect</td>
+            </tr>
+            <tr>
+              <td><strong>n8n Cloud GmbH</strong><br>(Alemania, UE)</td>
+              <td>Ejecución de flujos automatizados de backend (workflows) que orquestan la lógica de negocio</td>
+              <td>Datos transaccionales y de comunicación según el flujo específico</td>
+            </tr>
+            <tr>
+              <td><strong>Expo / EAS</strong><br>(EE.UU.)</td>
+              <td>Servicio de notificaciones push a dispositivos iOS y Android</td>
+              <td>Token de notificación push del dispositivo, contenido del mensaje notificado</td>
+            </tr>
+            <tr>
+              <td><strong>Anthropic, PBC</strong><br>(EE.UU.)</td>
+              <td>Modelos de inteligencia artificial usados para asistencia interna en la moderación de contenido y mejora de descripciones (cuando aplique)</td>
+              <td>Texto pseudonimizado de descripciones de servicio o reseñas, sin datos identificadores directos</td>
+            </tr>
+            <tr>
+              <td><strong>Vercel, Inc.</strong><br>(EE.UU.)</td>
+              <td>Hosting del sitio web cityprosmx-landing.vercel.app</td>
+              <td>Logs de acceso anónimos al sitio web (no la app móvil)</td>
+            </tr>
+            <tr>
+              <td><strong>Autoridades competentes</strong></td>
+              <td>Cumplimiento de requerimientos legales válidos (orden judicial, requerimiento del SAT, etc.)</td>
+              <td>Datos específicos solicitados, conforme al alcance del requerimiento</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Cada uno de estos terceros tiene sus propias políticas de privacidad y medidas de seguridad. Hemos seleccionado proveedores con certificaciones reconocidas (SOC 2, ISO 27001, PCI-DSS Level 1, GDPR) para minimizar riesgos.</p>
+      </section>
+
+      <section id="transferencias">
+        <h2>6. Transferencias internacionales de datos</h2>
+        <p>Como puedes notar en la sección anterior, varios de nuestros proveedores de infraestructura están ubicados fuera de México (principalmente en Estados Unidos y la Unión Europea). Esto implica una transferencia internacional de datos personales conforme al Artículo 36 de la LFPDPPP.</p>
+        <p>Realizamos estas transferencias bajo los siguientes resguardos:</p>
+        <ul>
+          <li><strong>Acuerdos de procesamiento de datos (DPA):</strong> firmamos contratos con cada proveedor que les obligan a tratar tus datos exclusivamente para los fines indicados, bajo medidas de seguridad equivalentes a las exigidas por la LFPDPPP</li>
+          <li><strong>Cifrado en tránsito:</strong> toda comunicación con servidores externos usa TLS 1.2 o superior (HTTPS)</li>
+          <li><strong>Cifrado en reposo:</strong> los datos almacenados en Supabase y Stripe están cifrados</li>
+          <li><strong>Minimización de datos:</strong> compartimos solo lo estrictamente necesario para cada finalidad</li>
+        </ul>
+        <p>Al usar la Plataforma, otorgas tu consentimiento expreso para estas transferencias internacionales. Si no estás de acuerdo, deberás abstenerte de usar el servicio.</p>
+      </section>
+
+      <section id="derechos-arco">
+        <h2>7. Derechos ARCO y mecanismos de ejercicio</h2>
+        <p>Conforme a los artículos 22 al 35 de la LFPDPPP, tienes derecho a:</p>
+        <ul>
+          <li><strong>A — Acceso:</strong> conocer qué datos personales tuyos tenemos, para qué los usamos y las condiciones del tratamiento</li>
+          <li><strong>R — Rectificación:</strong> corregir datos inexactos, incompletos o desactualizados</li>
+          <li><strong>C — Cancelación:</strong> solicitar la eliminación de tus datos cuando consideres que no son necesarios para alguna finalidad legítima</li>
+          <li><strong>O — Oposición:</strong> oponerte al tratamiento de tus datos para finalidades específicas</li>
+        </ul>
+
+        <h3>Cómo ejercer tus derechos ARCO</h3>
+        <p>Envía un correo a <a href="mailto:elian.ayala02062000@gmail.com?subject=Derechos%20ARCO">elian.ayala02062000@gmail.com</a> con el asunto <strong>"Derechos ARCO"</strong> e incluye:</p>
+        <ol>
+          <li>Tu nombre completo y correo registrado en la Plataforma</li>
+          <li>Documento que acredite tu identidad (foto de tu INE) o de tu representante legal</li>
+          <li>Descripción clara y precisa del derecho que deseas ejercer y los datos sobre los que recae</li>
+          <li>Cualquier elemento que facilite la localización de tus datos (por ejemplo, fecha aproximada de registro)</li>
+        </ol>
+
+        <p><strong>Plazo de respuesta:</strong> hasta 20 días hábiles desde la recepción de la solicitud. Si la solicitud procede, ejecutaremos la acción correspondiente dentro de los 15 días hábiles siguientes.</p>
+
+        <div class="callout">
+          <strong>Importante:</strong> el derecho de cancelación tiene limitaciones cuando los datos son necesarios para cumplir obligaciones legales (por ejemplo, conservación fiscal de comprobantes durante 5 años conforme al CFF Art. 30). Para una eliminación completa de tu cuenta, consulta nuestra <a href="/eliminar-cuenta">página dedicada de eliminación de cuenta</a>.
+        </div>
+      </section>
+
+      <section id="seguridad">
+        <h2>8. Medidas de seguridad</h2>
+        <p>Implementamos medidas técnicas, físicas y administrativas para proteger tus datos personales contra acceso no autorizado, pérdida, alteración o divulgación indebida:</p>
+
+        <h3>Medidas técnicas</h3>
+        <ul>
+          <li>Cifrado de datos en tránsito mediante HTTPS/TLS 1.2+</li>
+          <li>Cifrado de datos en reposo en bases de datos Supabase</li>
+          <li>Autenticación con contraseñas hasheadas (bcrypt) — nunca almacenamos contraseñas en texto plano</li>
+          <li>Sistema de control de acceso a la base de datos basado en roles (Row Level Security)</li>
+          <li>Tokenización de datos de tarjeta (Stripe nunca expone los números completos a CityProsMX)</li>
+          <li>Logs de auditoría para detectar accesos sospechosos</li>
+          <li>Backups periódicos cifrados con retención limitada</li>
+        </ul>
+
+        <h3>Medidas administrativas</h3>
+        <ul>
+          <li>Acceso a datos personales limitado al personal estrictamente necesario</li>
+          <li>Acuerdos de confidencialidad con cualquier colaborador o tercero que tenga acceso a datos</li>
+          <li>Capacitación interna sobre protección de datos personales</li>
+          <li>Procedimientos documentados para responder a incidentes de seguridad</li>
+        </ul>
+
+        <h3>Medidas físicas</h3>
+        <ul>
+          <li>Los datos se almacenan en data centers certificados (SOC 2 Type II) operados por Supabase, Stripe y otros proveedores listados en la sección 5, no en servidores propios</li>
+        </ul>
+
+        <p>A pesar de estas medidas, ningún sistema es 100% inviolable. Si detectamos un incidente de seguridad que comprometa tus datos personales, te notificaremos por correo electrónico y a través de la Plataforma dentro de los plazos establecidos por la LFPDPPP.</p>
+      </section>
+
+      <section id="retencion">
+        <h2>9. Retención y supresión de datos</h2>
+        <p>Conservamos tus datos personales únicamente durante el tiempo necesario para cumplir las finalidades para las que fueron recabados, salvo cuando la ley exija plazos mayores.</p>
+
+        <h3>Plazos generales de retención</h3>
+        <ul>
+          <li><strong>Cuenta activa:</strong> mientras mantengas tu cuenta abierta y la uses regularmente</li>
+          <li><strong>Cuenta inactiva por más de 24 meses:</strong> nos reservamos el derecho a contactarte y, en caso de no recibir respuesta, eliminar tu cuenta y datos asociados, salvo los que debamos conservar por obligación fiscal</li>
+          <li><strong>Comprobantes fiscales y registros transaccionales:</strong> 5 años a partir de la fecha de la transacción, conforme al Artículo 30 del Código Fiscal de la Federación. Estos registros se conservan en forma anonimizada (sin datos personales identificadores) cuando la cuenta es eliminada</li>
+          <li><strong>Logs de auditoría críticos:</strong> hasta 12 meses, salvo cuando estén vinculados a una investigación abierta o requerimiento legal</li>
+          <li><strong>Backups del sistema:</strong> hasta 90 días</li>
+        </ul>
+
+        <p>Para más detalles sobre el proceso de eliminación de cuenta y qué datos se conservan, consulta nuestra <a href="/eliminar-cuenta">página dedicada de eliminación de cuenta</a>.</p>
+      </section>
+
+      <section id="cookies">
+        <h2>10. Cookies y tecnologías de seguimiento</h2>
+
+        <h3>10.1 En la aplicación móvil</h3>
+        <p>La aplicación móvil de CityProsMX <strong>no utiliza cookies</strong>. Para mantener tu sesión iniciada usamos tokens de autenticación seguros almacenados en el almacenamiento cifrado del sistema operativo (Keychain en iOS, Keystore en Android).</p>
+
+        <h3>10.2 En el sitio web</h3>
+        <p>Este sitio web (cityprosmx-landing.vercel.app) <strong>no utiliza cookies de seguimiento ni de publicidad</strong>. Vercel, nuestro proveedor de hosting, puede registrar logs de acceso técnicos básicos (dirección IP, navegador, fecha) por seguridad y diagnóstico, los cuales son anonimizados después de un periodo corto.</p>
+        <p>No usamos Google Analytics, Facebook Pixel, ni ninguna otra herramienta de tracking de comportamiento.</p>
+      </section>
+
+      <section id="menores">
+        <h2>11. Menores de edad</h2>
+        <p>CityProsMX está dirigido exclusivamente a personas mayores de 18 años. No recabamos intencionalmente datos personales de menores de edad.</p>
+        <p>Si detectamos que un menor se ha registrado en la Plataforma, procederemos a eliminar su cuenta y datos asociados de inmediato. Si eres padre, madre o tutor y consideras que tu hijo menor nos ha proporcionado datos personales, contáctanos en <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a>.</p>
+      </section>
+
+      <section id="cambios">
+        <h2>12. Cambios al Aviso de Privacidad</h2>
+        <p>Este Aviso de Privacidad puede ser modificado en el futuro para reflejar:</p>
+        <ul>
+          <li>Cambios en la legislación mexicana aplicable</li>
+          <li>Nuevas funciones o servicios de la Plataforma</li>
+          <li>Cambios en proveedores tecnológicos o socios comerciales</li>
+          <li>Mejoras en las medidas de seguridad</li>
+        </ul>
+        <p>Cualquier modificación material será notificada con al menos 15 días de anticipación a través de:</p>
+        <ul>
+          <li>Notificación dentro de la aplicación móvil</li>
+          <li>Correo electrónico a la dirección registrada en tu cuenta</li>
+          <li>Publicación de la nueva versión en este sitio web, indicando claramente la fecha de vigencia</li>
+        </ul>
+        <p>El historial de versiones se conserva para que puedas consultar cambios anteriores. La versión vigente es la que aparece publicada en este sitio web con la fecha más reciente.</p>
+      </section>
+
+      <section id="contacto">
+        <h2>13. Contacto del responsable</h2>
+        <p>Para cualquier duda, comentario o solicitud relacionada con este Aviso de Privacidad o el tratamiento de tus datos personales, puedes contactarnos:</p>
+        <ul>
+          <li><strong>Responsable:</strong> Elian Rodriguez Ayala</li>
+          <li><strong>Marca comercial:</strong> CityProsMX</li>
+          <li><strong>Correo electrónico:</strong> <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a></li>
+          <li><strong>Tiempo de respuesta:</strong> hasta 24 horas en días hábiles (zona horaria de México, UTC-6)</li>
+          <li><strong>Ubicación:</strong> Guadalajara, Jalisco, México</li>
+        </ul>
+        <p>Si consideras que tus derechos han sido vulnerados o que el tratamiento de tus datos no se ajusta a la LFPDPPP, también puedes presentar una denuncia ante la <strong>Secretaría de Anticorrupción y Buen Gobierno</strong>, autoridad encargada de la protección de datos personales en posesión de particulares en México desde marzo de 2025.</p>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Inicio</a>
+      <a href="/eliminar-cuenta">Eliminar mi cuenta</a>
+      <a href="/terminos">Términos y Condiciones</a>
+      <a href="/reembolsos">Cancelaciones y Reembolsos</a>
+      <a href="mailto:elian.ayala02062000@gmail.com">Contacto</a>
+    </div>
+    <p class="footer-copy">© 2026 CityProsMX · Guadalajara, Jalisco, México</p>
+  </footer>
+
+</body>
+</html>
