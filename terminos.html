@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones — CityProsMX</title>
+  <meta name="description" content="Términos y Condiciones de Uso de CityProsMX. Plataforma de intermediación entre clientes y prestadores de servicios del hogar en Guadalajara, México. Conforme a la legislación mexicana." />
+  <meta name="robots" content="index, follow" />
+  <style>
+    :root {
+      --naranja: #FF6B35;
+      --azul: #1B3A5C;
+      --gris: #F5F5F5;
+      --texto: #1a1a18;
+      --secundario: #888780;
+      --borde: #F0F0F0;
+      --verde: #0F6E56;
+      --rojo: #D32F2F;
+      --amarillo: #C9952A;
+      --azul-claro: rgba(27, 58, 92, 0.05);
+      --verde-claro: rgba(15, 110, 86, 0.08);
+      --amarillo-claro: rgba(201, 149, 42, 0.1);
+      --rojo-claro: rgba(211, 47, 47, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--texto);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    a { color: var(--naranja); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--azul);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--naranja); }
+    .nav-back {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-back:hover { color: #fff; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      background: var(--azul);
+      color: #fff;
+      padding: 56px 24px 64px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 12px;
+    }
+    .hero-meta {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-meta span {
+      background: rgba(255,255,255,0.1);
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+
+    /* LAYOUT 2 COLUMNAS */
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+    }
+
+    /* TOC STICKY */
+    .toc {
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      background: var(--gris);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 13px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
+    .toc h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--secundario);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+    .toc ol li {
+      counter-increment: toc;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--borde);
+    }
+    .toc ol li:last-child { border-bottom: none; }
+    .toc ol li::before {
+      content: counter(toc) ". ";
+      color: var(--secundario);
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .toc a {
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .toc a:hover { color: var(--naranja); text-decoration: none; }
+
+    /* MAIN */
+    main { min-width: 0; }
+
+    section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--azul);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--naranja);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--azul);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--texto);
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      font-size: 15px;
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    li {
+      margin-bottom: 6px;
+      color: var(--texto);
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: var(--azul-claro);
+      border-left: 4px solid var(--azul);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .callout strong { color: var(--azul); }
+
+    .callout-warning {
+      background: var(--amarillo-claro);
+      border-left-color: var(--amarillo);
+    }
+    .callout-warning strong { color: var(--amarillo); }
+
+    /* CALLOUT ROJO PARA CLAUSULAS CRITICAS */
+    .callout-critico {
+      background: var(--rojo-claro);
+      border-left-color: var(--rojo);
+    }
+    .callout-critico strong { color: var(--rojo); }
+
+    /* SUBSECCIONES NUMERADAS */
+    section h3 + p,
+    section h3 + ul,
+    section h3 + ol {
+      margin-top: 4px;
+    }
+
+    .clausula-num {
+      font-weight: 700;
+      color: var(--azul);
+      margin-right: 4px;
+    }
+
+    /* DESTACADO PARA CLAUSULA 20 - MANDATO */
+    section#mandato {
+      background: var(--azul-claro);
+      padding: 32px;
+      border-radius: 16px;
+      border-left: 4px solid var(--azul);
+    }
+    section#mandato h2 {
+      border-bottom-color: var(--azul);
+    }
+
+    /* TABLA DE TERCEROS / COMISIONES */
+    .tabla-terceros,
+    .tabla-comisiones {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+    }
+    .tabla-terceros thead,
+    .tabla-comisiones thead {
+      background: var(--azul);
+      color: #fff;
+    }
+    .tabla-terceros th,
+    .tabla-comisiones th {
+      padding: 12px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 13px;
+    }
+    .tabla-comisiones td {
+      padding: 12px;
+      text-align: left;
+      font-size: 13px;
+      border-bottom: 1px solid var(--borde);
+      vertical-align: top;
+    }
+    .tabla-comisiones tr:last-child td { border-bottom: none; }
+    .tabla-comisiones td strong { color: var(--azul); }
+
+    /* FOOTER */
+    footer {
+      background: var(--azul);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 20px;
+      }
+      .toc {
+        position: static;
+        max-height: none;
+      }
+      .hero { padding: 40px 20px 48px; }
+      section#mandato { padding: 24px 20px; }
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 19px; }
+      .tabla-comisiones { font-size: 13px; display: block; overflow-x: auto; }
+      .tabla-comisiones th, .tabla-comisiones td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">City<span>Pros</span>MX</div>
+    <a href="/" class="nav-back">← Volver al inicio</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Términos y Condiciones de Uso</h1>
+    <div class="hero-meta">
+      <span>Versión 2.0</span>
+      <span>Vigente desde mayo de 2026</span>
+      <span>Conforme a legislación mexicana</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside class="toc">
+      <h4>Contenido</h4>
+      <ol>
+        <li><a href="#responsable">Identificación del responsable</a></li>
+        <li><a href="#naturaleza">Naturaleza jurídica</a></li>
+        <li><a href="#aceptacion">Aceptación de los Términos</a></li>
+        <li><a href="#definiciones">Definiciones</a></li>
+        <li><a href="#registro">Registro y cuenta</a></li>
+        <li><a href="#cliente">Obligaciones del Cliente</a></li>
+        <li><a href="#prestador">Obligaciones del Prestador</a></li>
+        <li><a href="#cotizacion">Proceso de cotización</a></li>
+        <li><a href="#pagos">Pagos y métodos de pago</a></li>
+        <li><a href="#resenas">Reseñas y calificaciones</a></li>
+        <li><a href="#deslinde">Deslinde de responsabilidad</a></li>
+        <li><a href="#garantias">Limitación de garantías</a></li>
+        <li><a href="#contenido-usuario">Contenido del Usuario</a></li>
+        <li><a href="#propiedad-intelectual">Propiedad intelectual</a></li>
+        <li><a href="#privacidad">Privacidad y datos</a></li>
+        <li><a href="#suspension">Suspensión y cancelación</a></li>
+        <li><a href="#generales">Disposiciones generales</a></li>
+        <li><a href="#contacto">Contacto y disputas</a></li>
+        <li><a href="#modificaciones">Modificaciones</a></li>
+        <li><a href="#mandato"><strong>Mandato mercantil</strong></a></li>
+        <li><a href="#verificacion-ine">Verificación de identidad</a></li>
+      </ol>
+    </aside>
+
+    <main>
+
+      <section id="responsable">
+        <h2>1. Identificación del Responsable</h2>
+        <p>Los presentes Términos y Condiciones de Uso (en adelante "Términos") regulan el acceso y uso de la aplicación móvil <strong>CityProsMX</strong> y del sitio web <a href="/">cityprosmx-landing.vercel.app</a> (en conjunto, "la Plataforma" o "la Aplicación"), operada por:</p>
+        <ul>
+          <li><strong>Nombre:</strong> Elian Rodriguez Ayala (persona física con actividad empresarial)</li>
+          <li><strong>Marca comercial:</strong> CityProsMX</li>
+          <li><strong>Domicilio:</strong> Guadalajara, Jalisco, México</li>
+          <li><strong>Correo de contacto:</strong> <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a></li>
+        </ul>
+        <p>(En adelante, "el Responsable", "nosotros" o "CityProsMX".)</p>
+
+        <div class="callout">
+          <strong>Cláusula de transición empresarial.</strong> El Responsable tiene la intención de constituir una persona moral bajo las leyes mexicanas para operar CityProsMX. Cuando dicha constitución ocurra, todos los derechos y obligaciones derivados de estos Términos serán transferidos automáticamente a la persona moral constituida, sin que ello represente una modificación sustancial de las condiciones aquí establecidas, y sin necesidad de nueva aceptación por parte de los Usuarios, quienes serán notificados de dicha transferencia a través de la Aplicación.
+        </div>
+      </section>
+
+      <section id="naturaleza">
+        <h2>2. Naturaleza jurídica de CityProsMX</h2>
+        <p><strong>2.1 Plataforma de intermediación tecnológica.</strong> CityProsMX opera como intermediario digital que conecta a personas que requieren servicios del hogar ("Clientes") con personas que ofrecen dichos servicios de manera independiente ("Prestadores"). El Responsable no es proveedor de servicios del hogar, no es empleador de los Prestadores, no es agente, ni socio comercial de los Usuarios.</p>
+        <p><strong>2.2 Excepción importante: figura del mandato.</strong> Para efectos exclusivos del procesamiento de pagos electrónicos a través de la Plataforma, el Prestador otorga al Responsable un mandato mercantil con representación, conforme a lo detallado en la <a href="#mandato">Cláusula 20</a> de estos Términos. Este mandato no transforma a CityProsMX en proveedor de los servicios del hogar; se limita exclusivamente al cobro y entrega de los fondos correspondientes a cada servicio.</p>
+        <p><strong>2.3</strong> Los contratos de prestación de servicios del hogar se celebran <strong>directamente y exclusivamente entre el Cliente y el Prestador</strong>. CityProsMX no es parte de dichos contratos y no adquiere obligaciones derivadas de los mismos, salvo las específicas relacionadas con el cobro y entrega de pagos según la Cláusula 20.</p>
+        <p><strong>2.4</strong> Los Prestadores que utilizan la Plataforma son contratistas independientes que actúan por cuenta y riesgo propio. No existe relación laboral, de subordinación, ni representación general entre CityProsMX y los Prestadores.</p>
+        <p><strong>2.5</strong> CityProsMX no garantiza la disponibilidad, calidad, seguridad, puntualidad, legalidad ni ninguna otra característica de los servicios ofrecidos por los Prestadores a través de la Plataforma.</p>
+      </section>
+
+      <section id="aceptacion">
+        <h2>3. Aceptación de los Términos</h2>
+        <p><strong>3.1</strong> El acceso y uso de la Plataforma implica la aceptación plena, sin reservas y de manera expresa de todos los términos, condiciones, políticas y avisos contenidos en este documento, así como en el <a href="/privacidad">Aviso de Privacidad</a> y en la <a href="/eliminar-cuenta">Política de Eliminación de Cuenta</a> de CityProsMX.</p>
+        <p><strong>3.2</strong> Si el Usuario no está de acuerdo con estos Términos, en su totalidad o en parte, deberá abstenerse de registrarse y de utilizar la Plataforma.</p>
+        <p><strong>3.3</strong> Al registrarse en CityProsMX, el Usuario declara bajo protesta de decir verdad:</p>
+        <ul>
+          <li>Ser mayor de 18 años de edad</li>
+          <li>Tener plena capacidad legal para celebrar contratos bajo la legislación mexicana</li>
+          <li>Que la información proporcionada durante el registro es veraz, completa, exacta y actualizada</li>
+          <li>Haber leído, comprendido y aceptado íntegramente estos Términos, el Aviso de Privacidad, y, si se registra como Prestador, el contrato de mandato descrito en la Cláusula 20</li>
+          <li>Que el uso que dará a la Plataforma es lícito y conforme a estos Términos</li>
+        </ul>
+        <p><strong>3.4</strong> La aceptación de estos Términos se formaliza mediante el marcado del casillero habilitado en el proceso de registro u onboarding de la Aplicación. CityProsMX conservará evidencia electrónica de dicha aceptación, incluyendo la fecha, hora y versión de los Términos aceptados, en cumplimiento del Código de Comercio y la NOM-151-SCFI-2016.</p>
+      </section>
+
+      <section id="definiciones">
+        <h2>4. Definiciones</h2>
+        <p>Para efectos de estos Términos, los siguientes vocablos tendrán el significado que a continuación se indica:</p>
+        <ul>
+          <li><strong>Aplicación o Plataforma:</strong> La aplicación móvil CityProsMX disponible para dispositivos iOS y Android, junto con el sitio web informativo, mediante la cual se conecta a Clientes con Prestadores en la Zona Metropolitana de Guadalajara.</li>
+          <li><strong>Cliente:</strong> Persona física mayor de 18 años que se registra en la Plataforma para solicitar y contratar servicios del hogar ofrecidos por los Prestadores.</li>
+          <li><strong>Prestador:</strong> Persona física mayor de 18 años que se registra en la Plataforma para ofrecer servicios de mantenimiento, reparación y mejoras del hogar de manera independiente y por cuenta y riesgo propios.</li>
+          <li><strong>Usuario:</strong> Término genérico que comprende tanto a Clientes como a Prestadores.</li>
+          <li><strong>Servicio:</strong> Las labores de plomería, electricidad, pintura, carpintería, cerrajería, herrería, impermeabilización, albañilería, control de plagas, instalación y mantenimiento de aire acondicionado, jardinería, desazolve, y otros servicios de mantenimiento del hogar ofrecidos por los Prestadores a través de la Plataforma.</li>
+          <li><strong>Cotización:</strong> Propuesta económica formal enviada por el Prestador al Cliente a través del sistema de mensajería de la Plataforma, detallando el costo de mano de obra, materiales y total del servicio, con la vigencia que CityProsMX establezca en la Plataforma.</li>
+          <li><strong>Conversación:</strong> Hilo de comunicación digital establecido entre un Cliente y un Prestador específico dentro de la Plataforma.</li>
+          <li><strong>Trabajo:</strong> El servicio efectivamente contratado y registrado en la Plataforma tras la aceptación de una Cotización y la confirmación del método de pago por parte del Cliente.</li>
+          <li><strong>Plan:</strong> Modalidad de suscripción mensual contratada por el Prestador para acceder a las funcionalidades de la Plataforma (Básico —gratuito—, Pro o Premium).</li>
+          <li><strong>Comisión:</strong> Porcentaje o monto fijo que CityProsMX retiene del pago realizado por el Cliente, conforme al esquema vigente publicado en la Plataforma y en estos Términos.</li>
+          <li><strong>Mandato:</strong> Contrato mercantil con representación celebrado entre el Prestador (mandante) y CityProsMX (mandatario), regulado en la Cláusula 20.</li>
+          <li><strong>Stripe:</strong> Empresa Stripe, Inc., procesador de pagos que opera en México y a través de la cual se procesan los pagos con tarjeta de crédito y débito y las transferencias a Prestadores vía Stripe Connect.</li>
+          <li><strong>Contenido del Usuario:</strong> Toda información, texto, fotografías, imágenes, mensajes, reseñas, calificaciones y cualquier otro material que el Usuario publique a través de la Plataforma.</li>
+          <li><strong>LFPC:</strong> Ley Federal de Protección al Consumidor.</li>
+          <li><strong>LFPDPPP:</strong> Ley Federal de Protección de Datos Personales en Posesión de los Particulares vigente desde el 21 de marzo de 2025.</li>
+          <li><strong>CCom:</strong> Código de Comercio de los Estados Unidos Mexicanos.</li>
+          <li><strong>CCF:</strong> Código Civil Federal.</li>
+          <li><strong>PROFECO:</strong> Procuraduría Federal del Consumidor.</li>
+          <li><strong>SAT:</strong> Servicio de Administración Tributaria.</li>
+        </ul>
+      </section>
+
+      <section id="registro">
+        <h2>5. Registro y cuenta de Usuario</h2>
+        <p><strong>5.1</strong> Para utilizar la Plataforma, el Usuario deberá crear una cuenta proporcionando nombre completo, correo electrónico y contraseña, o bien mediante autenticación con su cuenta de Google o Apple. Cada Usuario podrá tener únicamente un registro activo por cada rol (Cliente o Prestador).</p>
+        <p><strong>5.2</strong> El Usuario es responsable de mantener la confidencialidad de sus credenciales de acceso y de todas las actividades que ocurran bajo su cuenta. El Usuario deberá notificar inmediatamente a CityProsMX a través de <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a> sobre cualquier uso no autorizado.</p>
+        <p><strong>5.3</strong> CityProsMX no será responsable por ninguna pérdida derivada del incumplimiento del Usuario respecto a la confidencialidad de sus credenciales, ni por el uso no autorizado de su cuenta originado por descuido o negligencia del propio Usuario.</p>
+        <p><strong>5.4</strong> El Usuario se compromete a proporcionar y mantener actualizada la información de su perfil. La provisión de información falsa, inexacta o desactualizada será causa de suspensión o cancelación de la cuenta, sin perjuicio de las acciones legales que correspondan.</p>
+        <p><strong>5.5</strong> CityProsMX podrá, a su sola discreción, suspender o cancelar cuentas que violen estos Términos, incurran en comportamientos fraudulentos, o generen reclamaciones reiteradas de otros Usuarios.</p>
+      </section>
+
+      <section id="cliente">
+        <h2>6. Obligaciones específicas del Cliente</h2>
+        <p><strong>6.1</strong> El Cliente se compromete a:</p>
+        <ul>
+          <li>Proporcionar información veraz y completa sobre el servicio que requiere</li>
+          <li>Facilitar al Prestador el acceso al inmueble en la fecha y hora acordadas</li>
+          <li>Tratar con respeto y dignidad a los Prestadores en todo momento</li>
+          <li>Pagar el monto acordado en la Cotización mediante el método seleccionado</li>
+          <li>Confirmar la realización del trabajo dentro de la Plataforma una vez completado</li>
+          <li>No solicitar a los Prestadores servicios adicionales no cotizados sin generar una nueva Cotización</li>
+          <li>No establecer acuerdos de pago fuera de la Plataforma con el propósito de evadir las comisiones o el sistema de registro de CityProsMX</li>
+          <li>No contratar directamente a Prestadores conocidos a través de la Plataforma para eludir el sistema de intermediación, durante la vigencia de estos Términos y por un período de 12 meses posteriores al último contacto a través de la Plataforma</li>
+        </ul>
+        <p><strong>6.2</strong> El Cliente reconoce que:</p>
+        <ul>
+          <li>CityProsMX no verifica de manera exhaustiva la identidad, experiencia, certificaciones, seguros o antecedentes penales de los Prestadores, salvo que se indique mediante el badge de "Verificado" en el perfil del Prestador</li>
+          <li>La presencia de cualquier Prestador en la Plataforma no implica aval, garantía, certificación ni recomendación por parte de CityProsMX</li>
+          <li>La evaluación, selección y contratación de un Prestador es responsabilidad exclusiva del Cliente</li>
+        </ul>
+      </section>
+
+      <section id="prestador">
+        <h2>7. Obligaciones específicas del Prestador</h2>
+        <p><strong>7.1</strong> El Prestador se compromete a:</p>
+        <ul>
+          <li>Proporcionar información veraz, completa y actualizada sobre sus servicios, experiencia, área de cobertura, métodos de pago aceptados y precios</li>
+          <li>Contar con las habilidades, conocimientos, herramientas y, en su caso, licencias o permisos necesarios para prestar los servicios que ofrece</li>
+          <li>Presentarse puntualmente en el domicilio del Cliente en la fecha y hora acordadas</li>
+          <li>Realizar el trabajo con la calidad y diligencia debidas</li>
+          <li>Cobrar únicamente el monto estipulado en la Cotización aceptada</li>
+          <li>Tratar con respeto y dignidad a los Clientes en todo momento</li>
+          <li>No solicitar ni aceptar pagos fuera de la Plataforma con el propósito de evadir el sistema de seguimiento de CityProsMX</li>
+          <li>Comunicar oportunamente al Cliente cualquier imprevisto que pudiera afectar el cumplimiento del servicio</li>
+          <li>Cumplir con todas sus obligaciones fiscales, de seguridad social y regulatorias derivadas de su actividad como prestador independiente</li>
+        </ul>
+        <p><strong>7.2</strong> El Prestador reconoce y acepta expresamente que:</p>
+        <ul>
+          <li>Actúa como contratista independiente y no como empleado, agente, representante ni socio de CityProsMX</li>
+          <li>Es el único y exclusivo responsable de los servicios que presta, incluyendo la calidad del trabajo, los materiales utilizados, los daños causados al inmueble o a las personas, y cualquier consecuencia legal derivada de su actividad</li>
+          <li>Debe contar con los seguros necesarios para cubrir los riesgos derivados de su actividad profesional</li>
+          <li>CityProsMX no asume ninguna responsabilidad por accidentes, daños, lesiones o cualquier otro perjuicio que el Prestador pueda sufrir o causar en el ejercicio de su actividad</li>
+          <li>Es responsable de cumplir con las disposiciones de la Ley Federal del Trabajo, el IMSS, el SAT y cualquier otra normatividad aplicable a su actividad</li>
+        </ul>
+        <p><strong>7.3</strong> El Prestador que suscriba un Plan de suscripción (Pro o Premium) reconoce que:</p>
+        <ul>
+          <li>El pago de la suscripción mensual es contraprestación por el acceso a funcionalidades adicionales de la Plataforma, y no garantiza un número específico de servicios, clientes o ingresos</li>
+          <li>La cancelación o no renovación del Plan no generará derecho a reembolso por el período ya transcurrido</li>
+          <li>El incumplimiento reiterado de estos Términos puede resultar en la suspensión de su cuenta, sin derecho a reembolso de la suscripción vigente</li>
+        </ul>
+      </section>
+
+      <section id="cotizacion">
+        <h2>8. Proceso de cotización y contratación</h2>
+        <p><strong>8.1</strong> El proceso de contratación en la Plataforma se rige por el siguiente flujo:</p>
+        <ol>
+          <li>El Cliente contacta al Prestador y describe el servicio requerido a través del sistema de mensajería</li>
+          <li>El Prestador envía una Cotización formal al Cliente especificando mano de obra, materiales y total</li>
+          <li>La Cotización tiene la vigencia que CityProsMX establezca en la Plataforma (consulta el detalle vigente en la Aplicación)</li>
+          <li>El Cliente puede aceptar o rechazar la Cotización</li>
+          <li>La aceptación de la Cotización genera un Trabajo en la Plataforma y obliga al Cliente al pago del monto acordado por el método elegido</li>
+          <li>Una vez realizado el servicio, ambas partes confirman la finalización del Trabajo en la Plataforma</li>
+          <li>El Cliente puede dejar una reseña del servicio recibido</li>
+        </ol>
+        <p><strong>8.2</strong> La aceptación de una Cotización por parte del Cliente constituye un acuerdo vinculante entre Cliente y Prestador. CityProsMX no es parte de este acuerdo, salvo en lo relativo al procesamiento del pago electrónico cuando aplique, conforme a la Cláusula 20.</p>
+        <p><strong>8.3</strong> El Cliente tiene un período de gracia para cancelar la Cotización aceptada sin penalización, conforme al plazo configurado en la Plataforma y mostrado al momento de la aceptación. Transcurrido dicho período, la cancelación podrá generar obligaciones de pago según lo acordado con el Prestador.</p>
+        <p><strong>8.4</strong> CityProsMX no asume responsabilidad por disputas entre Clientes y Prestadores derivadas del proceso de cotización, contratación o ejecución de los servicios, salvo en lo expresamente previsto en estos Términos.</p>
+      </section>
+
+      <section id="pagos">
+        <h2>9. Pagos y métodos de pago</h2>
+        <p><strong>9.1 Métodos de pago disponibles.</strong> El Cliente podrá pagar el servicio contratado mediante alguno de los siguientes métodos:</p>
+        <ul>
+          <li><strong>Efectivo:</strong> el Cliente paga directamente al Prestador al momento de finalizar el servicio. CityProsMX no participa en este flujo de pago.</li>
+          <li><strong>Transferencia SPEI:</strong> el Cliente realiza una transferencia bancaria directamente a la CLABE proporcionada por el Prestador. CityProsMX facilita la información de la CLABE pero no procesa la transferencia.</li>
+          <li><strong>Tarjeta de crédito o débito:</strong> el pago se procesa a través de Stripe, Inc. ("Stripe"). CityProsMX recibe el pago a nombre del Prestador conforme al mandato mercantil descrito en la Cláusula 20, retiene su comisión y transfiere el remanente al Prestador a través de Stripe Connect.</li>
+        </ul>
+
+        <p><strong>9.2 Procesador de pagos.</strong> CityProsMX utiliza Stripe, Inc. para el procesamiento de pagos con tarjeta. Stripe es una empresa estadounidense con licencia para operar como procesador de pagos en México, certificada PCI-DSS Level 1. CityProsMX no almacena datos completos de tarjetas; estos son tokenizados y procesados directamente por Stripe.</p>
+
+        <p><strong>9.3 No discriminación por método de pago.</strong> Conforme al artículo 10 BIS de la Ley Federal de Protección al Consumidor (reforma vigente desde abril de 2024), queda prohibido cobrar al Cliente recargos o comisiones adicionales por el uso de cualquier método de pago. El Cliente siempre pagará el total indicado en la Cotización, independientemente del método elegido.</p>
+
+        <p><strong>9.4 Comisiones aplicables al Prestador.</strong> Cuando el pago se procese vía tarjeta a través de Stripe, las siguientes comisiones serán retenidas del monto bruto antes de transferir el neto al Prestador:</p>
+
+        <table class="tabla-comisiones">
+          <thead>
+            <tr>
+              <th>Concepto</th>
+              <th>Beneficiario</th>
+              <th>Importe</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Comisión de procesamiento</strong></td>
+              <td>Stripe, Inc.</td>
+              <td>Conforme a la tarifa vigente publicada por Stripe (típicamente 3.6% + IVA + cargo fijo por transacción)</td>
+            </tr>
+            <tr>
+              <td><strong>Comisión de plataforma</strong></td>
+              <td>CityProsMX</td>
+              <td>Conforme al esquema publicado en la Plataforma al momento de la transacción</td>
+            </tr>
+            <tr>
+              <td><strong>Monto neto al Prestador</strong></td>
+              <td>Prestador</td>
+              <td>Total cobrado al Cliente menos las comisiones anteriores</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Las comisiones aplicables al momento de cada transacción serán informadas al Prestador a través de la Plataforma antes de la confirmación del Trabajo. El Prestador acepta dichas comisiones al aceptar estos Términos y al confirmar cada Cotización.</p>
+
+        <p><strong>9.5 Plazos de transferencia.</strong> CityProsMX transferirá el monto neto al Prestador, vía Stripe Connect, en un plazo de hasta 7 días hábiles posteriores a la confirmación del Trabajo por parte del Cliente. Los plazos pueden variar según las políticas operativas de Stripe.</p>
+
+        <p><strong>9.6 Comprobantes fiscales.</strong> CityProsMX emitirá Comprobantes Fiscales Digitales por Internet (CFDI) únicamente por las comisiones cobradas al Prestador. La emisión de CFDI por el servicio prestado al Cliente es responsabilidad exclusiva del Prestador, quien deberá hacerlo conforme a sus obligaciones fiscales como contratista independiente.</p>
+
+        <p><strong>9.7 Disputas y reembolsos.</strong> Para los pagos procesados vía Stripe, el Cliente puede solicitar un reembolso a través del proceso descrito en la Política de Cancelaciones y Reembolsos disponible en <a href="/reembolsos">cityprosmx-landing.vercel.app/reembolsos</a>. Para pagos en efectivo o SPEI, las disputas deberán resolverse directamente entre Cliente y Prestador.</p>
+
+        <p><strong>9.8</strong> CityProsMX no será responsable por errores, demoras, fraudes o cualquier otro problema derivado de transacciones de pago realizadas fuera de la Plataforma o a través de medios no autorizados.</p>
+      </section>
+
+      <section id="resenas">
+        <h2>10. Reseñas y calificaciones</h2>
+        <p><strong>10.1</strong> El sistema de reseñas y calificaciones de CityProsMX tiene como objetivo proporcionar información útil a la comunidad de Usuarios sobre la calidad de los servicios prestados. Las reseñas son opiniones subjetivas de los Clientes y no representan la opinión de CityProsMX.</p>
+        <p><strong>10.2</strong> Solo los Clientes que hayan tenido un Trabajo confirmado con un Prestador podrán dejar una reseña sobre dicho Prestador. Las reseñas deben ser verídicas, basadas en experiencias reales y respetuosas.</p>
+        <p><strong>10.3</strong> Queda estrictamente prohibido:</p>
+        <ul>
+          <li>Publicar reseñas falsas, difamatorias, engañosas o fraudulentas</li>
+          <li>Solicitar, ofrecer o aceptar contraprestación a cambio de publicar o eliminar reseñas</li>
+          <li>Publicar información privada o confidencial de otros Usuarios en las reseñas</li>
+          <li>Usar las reseñas para realizar ataques personales, discriminación o acoso</li>
+        </ul>
+        <p><strong>10.4</strong> CityProsMX se reserva el derecho de eliminar reseñas que violen estos Términos, sin que ello implique responsabilidad alguna frente al Usuario afectado.</p>
+        <p><strong>10.5</strong> Cuando un Usuario solicite la eliminación de su cuenta conforme a la <a href="/eliminar-cuenta">Política de Eliminación de Cuenta</a>, las reseñas que haya publicado serán anonimizadas (el autor aparecerá como "Usuario eliminado") pero el contenido se conservará para preservar la integridad del marketplace.</p>
+      </section>
+
+      <section id="deslinde">
+        <h2>11. Deslinde de responsabilidad — Servicios entre Usuarios</h2>
+        <p><strong>11.1 Deslinde general.</strong> CityProsMX es exclusivamente una plataforma de intermediación tecnológica. El Responsable no tiene control sobre la identidad real de los Usuarios, la calidad de los servicios ofrecidos, ni sobre las condiciones en que se prestan los servicios.</p>
+        <p><strong>11.2</strong> CityProsMX <strong>NO será responsable</strong>, bajo ninguna circunstancia, por:</p>
+        <ul>
+          <li>Daños físicos, materiales, patrimoniales o morales sufridos por el Cliente, el Prestador o terceros durante o como consecuencia de la prestación de un servicio coordinado a través de la Plataforma</li>
+          <li>Daños al inmueble del Cliente causados por el Prestador, incluyendo pero no limitados a inundaciones, cortocircuitos, incendios, derrumbes, rotura de tuberías, daños estéticos o cualquier otro daño derivado de la ejecución deficiente del servicio</li>
+          <li>Accidentes, lesiones, enfermedades o fallecimientos del Prestador o de terceros durante la prestación del servicio</li>
+          <li>Robo, pérdida o daño de bienes del Cliente o del Prestador</li>
+          <li>Incumplimiento del Prestador en la prestación del servicio acordado</li>
+          <li>Cualquier acto ilícito cometido por un Usuario, incluyendo fraude, robo, violencia o acoso</li>
+          <li>Disputas económicas entre Clientes y Prestadores sobre el monto, la calidad o el alcance de los servicios prestados, salvo lo previsto en la Cláusula 9</li>
+          <li>Vicios ocultos o defectos latentes en los materiales o mano de obra que se manifiesten con posterioridad a la prestación del servicio</li>
+          <li>Daños consecuentes, incidentales, especiales, punitivos o indirectos de cualquier naturaleza</li>
+        </ul>
+        <p><strong>11.3 Limitación de responsabilidad.</strong> La responsabilidad máxima de CityProsMX frente a cualquier Usuario, en cualquier supuesto no excluido en el párrafo anterior, se limita al monto de las comisiones o suscripciones efectivamente pagadas por dicho Usuario a CityProsMX en los 3 meses previos al evento que originó la reclamación.</p>
+        <p><strong>11.4</strong> El Usuario acepta que el uso de la Plataforma implica la aceptación de riesgos inherentes a la contratación de servicios a través de plataformas digitales.</p>
+      </section>
+
+      <section id="garantias">
+        <h2>12. Limitación de garantías</h2>
+        <p><strong>12.1</strong> La Plataforma se proporciona "tal cual" y "según disponibilidad". CityProsMX no otorga garantía alguna, expresa o implícita, sobre:</p>
+        <ul>
+          <li>La disponibilidad ininterrumpida de la Plataforma</li>
+          <li>La ausencia de errores, virus o código malicioso</li>
+          <li>La idoneidad de la Plataforma para un propósito particular del Usuario</li>
+          <li>La exactitud, integridad o actualidad de la información contenida en la Plataforma</li>
+          <li>Que los resultados obtenidos cumplirán con las expectativas del Usuario</li>
+        </ul>
+        <p><strong>12.2</strong> CityProsMX no garantiza que los Prestadores estén disponibles en todo momento, ni que existan Prestadores en la categoría o zona geográfica requerida.</p>
+      </section>
+
+      <section id="contenido-usuario">
+        <h2>13. Contenido del Usuario</h2>
+        <p><strong>13.1</strong> El Usuario es el único responsable del Contenido del Usuario que publique. Al publicar Contenido del Usuario, el Usuario otorga a CityProsMX una licencia no exclusiva, gratuita, transferible, sublicenciable y mundial para usar, reproducir, modificar, adaptar, distribuir y mostrar dicho contenido únicamente con el propósito de operar, mejorar y promover la Plataforma.</p>
+        <p><strong>13.2</strong> Queda estrictamente prohibido publicar Contenido del Usuario que:</p>
+        <ul>
+          <li>Sea ilegal, obsceno, difamatorio, amenazante, abusivo, discriminatorio o violatorio de los derechos de terceros</li>
+          <li>Contenga información personal de terceros sin su consentimiento</li>
+          <li>Infrinja derechos de propiedad intelectual</li>
+          <li>Contenga virus o código malicioso</li>
+          <li>Sea falso, engañoso o fraudulento</li>
+          <li>Promueva actividades ilegales, violencia o discriminación</li>
+        </ul>
+        <p><strong>13.3</strong> CityProsMX se reserva el derecho de eliminar cualquier Contenido del Usuario que viole estos Términos, sin previo aviso.</p>
+      </section>
+
+      <section id="propiedad-intelectual">
+        <h2>14. Propiedad intelectual</h2>
+        <p><strong>14.1</strong> Todos los derechos de propiedad intelectual sobre la Plataforma, incluyendo pero no limitados a: el nombre comercial "CityProsMX", el logotipo, el diseño, la arquitectura, el código fuente, las bases de datos, los textos, los gráficos y cualquier otro elemento de la Aplicación, son propiedad de Elian Rodriguez Ayala o de sus licenciantes.</p>
+        <p><strong>14.2</strong> El uso de la Plataforma no otorga al Usuario ningún derecho sobre la propiedad intelectual de CityProsMX. Queda prohibida la reproducción, distribución, modificación, comunicación pública o cualquier otra forma de explotación no autorizada.</p>
+        <p><strong>14.3</strong> Si el Usuario considera que algún contenido infringe sus derechos de propiedad intelectual, deberá notificarlo a <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a>.</p>
+      </section>
+
+      <section id="privacidad">
+        <h2>15. Privacidad y protección de datos</h2>
+        <p><strong>15.1</strong> El tratamiento de los datos personales de los Usuarios se rige por el <a href="/privacidad">Aviso de Privacidad</a> de CityProsMX, el cual forma parte integrante de estos Términos.</p>
+        <p><strong>15.2</strong> Al aceptar estos Términos, el Usuario también acepta el Aviso de Privacidad y consiente el tratamiento de sus datos personales conforme a lo establecido en dicho documento.</p>
+        <p><strong>15.3</strong> El tratamiento de datos personales se realiza en cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) vigente desde el 21 de marzo de 2025, fiscalizada por la Secretaría de Anticorrupción y Buen Gobierno.</p>
+        <p><strong>15.4</strong> Para solicitar la eliminación de tu cuenta, consulta la <a href="/eliminar-cuenta">Política de Eliminación de Cuenta</a>.</p>
+      </section>
+
+      <section id="suspension">
+        <h2>16. Suspensión y cancelación de cuentas</h2>
+        <p><strong>16.1</strong> CityProsMX se reserva el derecho de suspender o cancelar de manera temporal o definitiva la cuenta de cualquier Usuario que:</p>
+        <ul>
+          <li>Incumpla cualquiera de las disposiciones de estos Términos</li>
+          <li>Proporcione información falsa o engañosa</li>
+          <li>Reciba múltiples reportes de problemas o calificaciones negativas</li>
+          <li>Realice actividades fraudulentas, ilegales o contrarias a la ética</li>
+          <li>Use la Plataforma para actividades distintas a las establecidas en estos Términos</li>
+          <li>Acose, amenace o agreda verbalmente a otros Usuarios</li>
+        </ul>
+        <p><strong>16.2</strong> En casos de violaciones graves, CityProsMX podrá cancelar la cuenta de manera inmediata y sin previo aviso.</p>
+        <p><strong>16.3</strong> El Usuario puede solicitar la cancelación de su cuenta en cualquier momento conforme a la <a href="/eliminar-cuenta">Política de Eliminación de Cuenta</a>. La cancelación de la cuenta no exime al Usuario de sus obligaciones pendientes frente a otros Usuarios ni frente a CityProsMX.</p>
+      </section>
+
+      <section id="generales">
+        <h2>17. Disposiciones generales</h2>
+        <p><strong>17.1 Ley aplicable.</strong> Estos Términos se rigen e interpretan conforme a las leyes de los Estados Unidos Mexicanos, en particular el Código de Comercio, el Código Civil Federal, la Ley Federal de Protección al Consumidor y demás disposiciones aplicables.</p>
+        <p><strong>17.2 Jurisdicción.</strong> Para la resolución de cualquier controversia derivada de estos Términos, las partes se someten a la jurisdicción de los tribunales competentes de la ciudad de Guadalajara, Jalisco, México, renunciando expresamente a cualquier otro fuero que pudiera corresponderles.</p>
+        <p><strong>17.3 PROFECO.</strong> Sin perjuicio de lo anterior, el Cliente podrá acudir ante la Procuraduría Federal del Consumidor (PROFECO) en los casos que así lo prevea la LFPC.</p>
+        <p><strong>17.4 Nulidad parcial.</strong> Si alguna disposición de estos Términos es declarada nula o inválida, dicha nulidad no afectará la validez de las demás disposiciones, que continuarán en plena vigencia.</p>
+        <p><strong>17.5 No renuncia.</strong> El hecho de que CityProsMX no ejerza algún derecho o disposición de estos Términos no constituirá una renuncia a dicho derecho.</p>
+        <p><strong>17.6 Acuerdo completo.</strong> Estos Términos, junto con el Aviso de Privacidad y la Política de Eliminación de Cuenta, constituyen el acuerdo completo entre el Usuario y CityProsMX respecto al uso de la Plataforma.</p>
+        <p><strong>17.7 Cesión.</strong> El Usuario no podrá ceder sus derechos u obligaciones bajo estos Términos sin consentimiento previo y por escrito de CityProsMX. CityProsMX podrá ceder sus derechos y obligaciones, incluyendo en el contexto de la constitución de la persona moral referida en la Cláusula 1.</p>
+        <p><strong>17.8 Evidencia electrónica.</strong> Las comunicaciones, notificaciones y transacciones realizadas a través de la Plataforma tienen plena validez probatoria conforme al Código de Comercio y demás disposiciones aplicables en materia de comercio electrónico.</p>
+      </section>
+
+      <section id="contacto">
+        <h2>18. Contacto y resolución de disputas</h2>
+        <p><strong>18.1</strong> Para cualquier queja, reclamación, sugerencia o ejercicio de derechos relacionados con estos Términos:</p>
+        <ul>
+          <li><strong>Correo electrónico:</strong> <a href="mailto:elian.ayala02062000@gmail.com">elian.ayala02062000@gmail.com</a></li>
+          <li><strong>Tiempo de respuesta:</strong> hasta 5 días hábiles desde la recepción de la solicitud</li>
+        </ul>
+        <p><strong>18.2</strong> En caso de disputas entre Clientes y Prestadores, CityProsMX podrá actuar como mediador neutral a solicitud de cualquiera de las partes, sin que dicha mediación implique responsabilidad alguna para CityProsMX ni carácter vinculante para las partes, salvo acuerdo expreso entre ellas.</p>
+      </section>
+
+      <section id="modificaciones">
+        <h2>19. Modificaciones a los Términos</h2>
+        <p><strong>19.1</strong> CityProsMX se reserva el derecho de modificar estos Términos en cualquier momento. Las modificaciones entrarán en vigor en la fecha que se indique en la notificación correspondiente, la cual se realizará a través de la Aplicación o por correo electrónico.</p>
+        <p><strong>19.2</strong> El uso continuado de la Plataforma tras la notificación de cambios constituirá la aceptación de los nuevos Términos.</p>
+        <p><strong>19.3</strong> Si los cambios son sustanciales (por ejemplo, modificación del esquema de comisiones, del mandato mercantil, o de los métodos de pago), CityProsMX notificará al Usuario con al menos 15 días naturales de anticipación. El Usuario que no esté de acuerdo con los cambios podrá cancelar su cuenta antes de que entren en vigor.</p>
+      </section>
+
+      <section id="mandato">
+        <h2>20. Contrato de Mandato Mercantil con Representación</h2>
+
+        <div class="callout callout-critico">
+          <strong>Cláusula esencial para Prestadores.</strong> Esta cláusula constituye un contrato de mandato mercantil entre el Prestador (mandante) y CityProsMX (mandatario), regulado por los artículos 273 a 308 del Código de Comercio y supletoriamente por los artículos 2546 a 2604 del Código Civil Federal. Su aceptación es condición indispensable para recibir pagos a través de Stripe en la Plataforma.
+        </div>
+
+        <h3>20.1 Otorgamiento del mandato</h3>
+        <p>El Prestador, por el solo hecho de aceptar estos Términos y registrar una cuenta de Stripe Connect a través de la Plataforma, otorga a CityProsMX un mandato mercantil con representación, para que actúe en nombre, por cuenta y a beneficio del Prestador en los siguientes actos:</p>
+        <ol>
+          <li>Cobrar al Cliente, mediante Stripe, el monto correspondiente a cada Trabajo contratado a través de la Plataforma cuando el método de pago elegido sea tarjeta de crédito o débito</li>
+          <li>Recibir dichos fondos en cuentas operadas por CityProsMX o por Stripe a nombre de CityProsMX</li>
+          <li>Retener de dichos fondos la comisión de plataforma de CityProsMX y la comisión de procesamiento de Stripe, conforme al esquema vigente</li>
+          <li>Transferir el remanente neto al Prestador a través de Stripe Connect en los plazos establecidos en la Cláusula 9.5</li>
+          <li>Procesar reembolsos a Clientes cuando proceda, conforme a la <a href="/reembolsos">Política de Cancelaciones y Reembolsos</a>, descontando dichos reembolsos del saldo del Prestador o requiriéndoselos cuando sea necesario</li>
+        </ol>
+
+        <h3>20.2 Naturaleza del mandato</h3>
+        <p>El presente mandato es:</p>
+        <ul>
+          <li><strong>Mercantil:</strong> tiene por objeto actos de comercio relacionados con la actividad del Prestador y de CityProsMX como plataforma de intermediación, conforme al artículo 273 del Código de Comercio</li>
+          <li><strong>Con representación:</strong> CityProsMX actúa en nombre del Prestador frente al Cliente y frente a Stripe, conforme al artículo 285 del Código de Comercio</li>
+          <li><strong>Oneroso:</strong> CityProsMX recibe una comisión por la ejecución del mandato, conforme al artículo 304 del Código de Comercio</li>
+          <li><strong>Especial:</strong> limitado exclusivamente a los actos de cobro, retención y entrega de pagos electrónicos descritos en la Cláusula 20.1, sin extenderse a la prestación del servicio del hogar ni a la representación general del Prestador</li>
+        </ul>
+
+        <h3>20.3 Obligaciones del mandatario (CityProsMX)</h3>
+        <p>CityProsMX se obliga a:</p>
+        <ul>
+          <li>Ejecutar el mandato con la diligencia debida y conforme a las instrucciones generales contenidas en estos Términos</li>
+          <li>Rendir cuentas al Prestador sobre los pagos cobrados, las comisiones retenidas y los montos transferidos, mediante el panel de control disponible en la Plataforma</li>
+          <li>Transferir los montos netos al Prestador en los plazos establecidos</li>
+          <li>Conservar registros de las transacciones por al menos 5 años, conforme al artículo 30 del Código Fiscal de la Federación</li>
+          <li>Emitir CFDI por las comisiones cobradas al Prestador, conforme al artículo 29 del Código Fiscal de la Federación</li>
+        </ul>
+
+        <h3>20.4 Obligaciones del mandante (Prestador)</h3>
+        <p>El Prestador se obliga a:</p>
+        <ul>
+          <li>Mantener una cuenta activa de Stripe Connect a nombre del Prestador, vinculada a su perfil en la Plataforma</li>
+          <li>Proporcionar información veraz y completa a Stripe para los procesos de verificación KYC (Know Your Customer) requeridos por la regulación financiera aplicable</li>
+          <li>Cumplir con sus obligaciones fiscales como prestador independiente, incluyendo la emisión de CFDI al Cliente por el servicio prestado</li>
+          <li>Aceptar las comisiones aplicables al momento de cada transacción, las cuales serán mostradas en la Plataforma antes de la confirmación del Trabajo</li>
+          <li>No realizar cobros adicionales al Cliente fuera de la Plataforma con el propósito de evadir el mandato</li>
+          <li>Reembolsar a CityProsMX cualquier monto que esta hubiera tenido que devolver al Cliente por causa imputable al Prestador (incumplimiento del servicio, contracargo justificado, fraude declarado por Stripe, etc.)</li>
+        </ul>
+
+        <h3>20.5 Comisión del mandatario</h3>
+        <p>La comisión por la ejecución del mandato (denominada en estos Términos "Comisión de plataforma") será la publicada en la Plataforma al momento de cada transacción. Esta comisión es independiente y adicional a la comisión de procesamiento que cobra Stripe. El esquema de comisiones puede ser modificado por CityProsMX conforme a la Cláusula 19.</p>
+
+        <h3>20.6 Vigencia y revocación</h3>
+        <p>El mandato tiene vigencia mientras el Prestador mantenga su cuenta activa en la Plataforma. Cualquiera de las partes puede revocar el mandato:</p>
+        <ul>
+          <li>El <strong>Prestador</strong> puede revocar el mandato en cualquier momento, eliminando su cuenta de la Plataforma. La revocación no afecta las obligaciones derivadas de Trabajos ya iniciados, los cuales se concluirán conforme al esquema vigente al momento de su contratación.</li>
+          <li><strong>CityProsMX</strong> puede revocar el mandato en cualquier momento mediante notificación al Prestador, particularmente cuando el Prestador incumpla sus obligaciones bajo estos Términos o cuando Stripe deniegue, suspenda o cancele la cuenta de Stripe Connect del Prestador.</li>
+        </ul>
+
+        <h3>20.7 Limitación de responsabilidad del mandatario</h3>
+        <p>CityProsMX, en su calidad de mandatario, no será responsable por:</p>
+        <ul>
+          <li>Decisiones operativas o regulatorias de Stripe, Inc. (suspensiones de cuentas, retenciones de fondos, demoras en transferencias por revisiones de cumplimiento, etc.)</li>
+          <li>Contracargos disputados por el Cliente que sean adjudicados por la red de pagos a favor del Cliente</li>
+          <li>Errores u omisiones del Prestador en sus obligaciones fiscales</li>
+          <li>Caso fortuito o fuerza mayor que impida la ejecución del mandato</li>
+        </ul>
+
+        <h3>20.8 Independencia del mandato respecto al servicio del hogar</h3>
+        <p>Se reitera de manera enfática que el presente mandato se otorga <strong>exclusivamente</strong> para los actos de cobro, retención y entrega de pagos descritos en la Cláusula 20.1. CityProsMX <strong>no es mandatario, agente, representante, socio ni empleador del Prestador</strong> respecto a la prestación del servicio del hogar contratado entre el Cliente y el Prestador. Las obligaciones derivadas de la prestación del servicio recaen exclusivamente en el Prestador, conforme a la Cláusula 7.</p>
+      </section>
+
+      <section id="verificacion-ine">
+        <h2>21. Verificación de identidad del Prestador</h2>
+        <p><strong>21.1</strong> Como medida de seguridad y confianza para la comunidad de Usuarios, CityProsMX ofrece un proceso opcional de verificación de identidad para Prestadores. El Prestador que desee obtener el badge de "Verificado" en su perfil deberá:</p>
+        <ol>
+          <li>Subir a la Plataforma una fotografía clara y legible de su Credencial para Votar (INE) por ambos lados</li>
+          <li>Tomarse una selfie en tiempo real desde la Aplicación para confirmar que la persona coincide con la INE</li>
+          <li>Aceptar expresamente el tratamiento de estos datos conforme al <a href="/privacidad">Aviso de Privacidad</a></li>
+        </ol>
+        <p><strong>21.2</strong> CityProsMX revisa de manera manual estos documentos en un plazo máximo de 5 días hábiles. La verificación puede ser:</p>
+        <ul>
+          <li><strong>Aprobada:</strong> el Prestador recibe el badge "Verificado" en su perfil, visible para los Clientes</li>
+          <li><strong>Rechazada:</strong> CityProsMX notifica al Prestador y le permite intentar de nuevo si la documentación tenía errores subsanables (foto borrosa, INE vencida, etc.)</li>
+        </ul>
+        <p><strong>21.3</strong> La verificación de identidad NO constituye:</p>
+        <ul>
+          <li>Verificación de antecedentes penales</li>
+          <li>Verificación de capacidades técnicas o profesionales</li>
+          <li>Verificación de seguros o licencias específicas</li>
+          <li>Garantía de calidad del servicio del Prestador</li>
+        </ul>
+        <p>El badge "Verificado" únicamente confirma que la identidad del Prestador coincide con un documento oficial mexicano y que la persona detrás de la cuenta es una persona real.</p>
+        <p><strong>21.4</strong> Los datos de identificación recopilados (foto de INE y selfie) son tratados conforme a las medidas de seguridad reforzadas descritas en el <a href="/privacidad">Aviso de Privacidad</a>, sección 8 (Medidas de seguridad).</p>
+        <p><strong>21.5</strong> CityProsMX se reserva el derecho de revocar el badge "Verificado" en caso de detectar fraude, suplantación de identidad, o cualquier otra irregularidad relacionada con la documentación proporcionada, sin perjuicio de las acciones legales que correspondan.</p>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Inicio</a>
+      <a href="/privacidad">Aviso de Privacidad</a>
+      <a href="/eliminar-cuenta">Eliminar mi cuenta</a>
+      <a href="/reembolsos">Cancelaciones y Reembolsos</a>
+      <a href="mailto:elian.ayala02062000@gmail.com">Contacto</a>
+    </div>
+    <p class="footer-copy">© 2026 CityProsMX · Guadalajara, Jalisco, México</p>
+  </footer>
+
+</body>
+</html>
