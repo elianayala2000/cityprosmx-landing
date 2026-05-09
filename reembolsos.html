@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cancelaciones y Reembolsos — CityProsMX</title>
+  <meta name="description" content="Política de cancelaciones y reembolsos de CityProsMX. Plazos, métodos de pago, flujo de disputas y cómo solicitar la devolución de tu pago." />
+  <meta name="robots" content="index, follow" />
+  <style>
+    :root {
+      --naranja: #FF6B35;
+      --azul: #1B3A5C;
+      --gris: #F5F5F5;
+      --texto: #1a1a18;
+      --secundario: #888780;
+      --borde: #F0F0F0;
+      --verde: #0F6E56;
+      --rojo: #D32F2F;
+      --amarillo: #C9952A;
+      --azul-claro: rgba(27, 58, 92, 0.05);
+      --verde-claro: rgba(15, 110, 86, 0.08);
+      --amarillo-claro: rgba(201, 149, 42, 0.1);
+      --rojo-claro: rgba(211, 47, 47, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--texto);
+      background: #fff;
+      line-height: 1.7;
+    }
+
+    a { color: var(--naranja); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* NAV */
+    nav {
+      background: var(--azul);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--naranja); }
+    .nav-back {
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .nav-back:hover { color: #fff; text-decoration: none; }
+
+    /* HERO */
+    .hero {
+      background: var(--azul);
+      color: #fff;
+      padding: 56px 24px 64px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800;
+      line-height: 1.2;
+      max-width: 720px;
+      margin: 0 auto 12px;
+    }
+    .hero-meta {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-meta span {
+      background: rgba(255,255,255,0.1);
+      padding: 4px 12px;
+      border-radius: 12px;
+    }
+
+    /* LAYOUT 2 COLUMNAS */
+    .layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+    }
+
+    /* TOC STICKY */
+    .toc {
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      background: var(--gris);
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 13px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+    }
+    .toc h4 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--secundario);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+    }
+    .toc ol li {
+      counter-increment: toc;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--borde);
+    }
+    .toc ol li:last-child { border-bottom: none; }
+    .toc ol li::before {
+      content: counter(toc) ". ";
+      color: var(--secundario);
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .toc a {
+      color: var(--azul);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .toc a:hover { color: var(--naranja); text-decoration: none; }
+
+    /* MAIN */
+    main { min-width: 0; }
+
+    section {
+      margin-bottom: 48px;
+      scroll-margin-top: 80px;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--azul);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--naranja);
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--azul);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--texto);
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      font-size: 15px;
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    li {
+      margin-bottom: 6px;
+      color: var(--texto);
+    }
+
+    /* CALLOUT BOX */
+    .callout {
+      background: var(--azul-claro);
+      border-left: 4px solid var(--azul);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .callout strong { color: var(--azul); }
+
+    .callout-warning {
+      background: var(--amarillo-claro);
+      border-left-color: var(--amarillo);
+    }
+    .callout-warning strong { color: var(--amarillo); }
+
+    .callout-critico {
+      background: var(--rojo-claro);
+      border-left-color: var(--rojo);
+    }
+    .callout-critico strong { color: var(--rojo); }
+
+    /* TIMELINE HORIZONTAL DE FLUJO */
+    .flujo-pago {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .flujo-step {
+      background: var(--gris);
+      border-radius: 10px;
+      padding: 16px 14px;
+      text-align: center;
+      border: 1.5px solid var(--borde);
+    }
+    .flujo-step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--naranja);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .flujo-step h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--azul);
+      margin-bottom: 4px;
+    }
+    .flujo-step p {
+      font-size: 12px;
+      color: var(--secundario);
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    /* TABLA DE PLAZOS */
+    .tabla-plazos {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--borde);
+    }
+    .tabla-plazos thead {
+      background: var(--azul);
+      color: #fff;
+    }
+    .tabla-plazos th, .tabla-plazos td {
+      padding: 12px;
+      text-align: left;
+      font-size: 13px;
+    }
+    .tabla-plazos td {
+      border-bottom: 1px solid var(--borde);
+      vertical-align: top;
+    }
+    .tabla-plazos tr:last-child td { border-bottom: none; }
+    .tabla-plazos td strong { color: var(--azul); }
+    .tabla-plazos .badge-procede {
+      display: inline-block;
+      background: var(--verde-claro);
+      color: var(--verde);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tabla-plazos .badge-no-procede {
+      display: inline-block;
+      background: var(--rojo-claro);
+      color: var(--rojo);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tabla-plazos .badge-condicional {
+      display: inline-block;
+      background: var(--amarillo-claro);
+      color: var(--amarillo);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--azul);
+      color: rgba(255,255,255,0.7);
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px 20px;
+      }
+      .toc {
+        position: static;
+        max-height: none;
+      }
+      .hero { padding: 40px 20px 48px; }
+    }
+
+    @media (max-width: 600px) {
+      h2 { font-size: 19px; }
+      .tabla-plazos { font-size: 13px; display: block; overflow-x: auto; }
+      .tabla-plazos th, .tabla-plazos td { padding: 10px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">City<span>Pros</span>MX</div>
+    <a href="/" class="nav-back">← Volver al inicio</a>
+  </nav>
+
+  <header class="hero">
+    <h1>Política de Cancelaciones y Reembolsos</h1>
+    <div class="hero-meta">
+      <span>Versión 2.0</span>
+      <span>Vigente desde mayo de 2026</span>
+      <span>Conforme a LFPC México</span>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside class="toc">
+      <h4>Contenido</h4>
+      <ol>
+        <li><a href="#alcance">Alcance de esta política</a></li>
+        <li><a href="#cancelacion-cliente">Cancelación por el Cliente</a></li>
+        <li><a href="#cancelacion-prestador">Cancelación por el Prestador</a></li>
+        <li><a href="#trabajo-no-confirmado">Trabajo no confirmado por el Cliente</a></li>
+        <li><a href="#auto-completado">Auto-completado a las 48 horas</a></li>
+        <li><a href="#reembolsos-stripe">Reembolsos por tarjeta (Stripe)</a></li>
+        <li><a href="#reembolsos-spei">Reembolsos por SPEI</a></li>
+        <li><a href="#pagos-efectivo">Pagos en efectivo</a></li>
+        <li><a href="#suscripciones">Reembolsos de suscripciones</a></li>
+        <li><a href="#contacto">Cómo solicitar un reembolso</a></li>
+      </ol>
+    </aside>
+
+    <main>
+
+      <section id="alcance">
+        <h2>1. Alcance de esta política</h2>
+        <p>La presente Política de Cancelaciones y Reembolsos establece las reglas y procedimientos aplicables cuando un Cliente o Prestador desea cancelar un Trabajo, solicitar la devolución de un pago, o resolver una disputa derivada de un servicio contratado a través de la Plataforma CityProsMX.</p>
+        <p>Esta política forma parte integrante de los <a href="/terminos">Términos y Condiciones de Uso</a> y debe leerse conjuntamente con ellos. En particular, las disposiciones sobre el <a href="/terminos#mandato">contrato de mandato mercantil</a> (Cláusula 20 de los Términos) regulan los flujos de pago a través de Stripe que aquí se desarrollan.</p>
+
+        <div class="callout">
+          <strong>Punto clave.</strong> CityProsMX es una plataforma de intermediación. Los servicios del hogar son prestados directamente por los Prestadores. Esta política aplica únicamente a las transacciones realizadas a través de la Plataforma y a los pagos procesados mediante Stripe (tarjeta) o coordinados vía SPEI dentro del flujo de la Aplicación.
+        </div>
+
+        <h3>1.1 Métodos de pago cubiertos por esta política</h3>
+        <ul>
+          <li><strong>Pago con tarjeta (Stripe):</strong> CityProsMX puede gestionar reembolsos directamente, conforme a la Cláusula 6 de esta política</li>
+          <li><strong>Pago con SPEI (transferencia bancaria):</strong> CityProsMX no procesa el pago, pero puede mediar el reembolso voluntario entre Cliente y Prestador, conforme a la Cláusula 7</li>
+          <li><strong>Pago en efectivo:</strong> CityProsMX no participa en estas transacciones; los reembolsos son responsabilidad exclusiva de las partes, conforme a la Cláusula 8</li>
+        </ul>
+      </section>
+
+      <section id="cancelacion-cliente">
+        <h2>2. Cancelación por el Cliente</h2>
+
+        <h3>2.1 Ventana de cancelación sin penalización</h3>
+        <p>El Cliente puede cancelar una Cotización aceptada sin costo alguno dentro del plazo de gracia configurado en la Plataforma, siempre que el Prestador no haya iniciado el desplazamiento al domicilio del servicio. El plazo vigente al momento de la aceptación de la Cotización es mostrado al Cliente en la Aplicación.</p>
+        <p>La cancelación debe realizarse desde la propia Plataforma seleccionando el motivo correspondiente. Las cancelaciones realizadas por canales distintos (correo, llamada, mensaje fuera de la app) no garantizan el reembolso automático.</p>
+
+        <h3>2.2 Cancelación posterior al plazo de gracia</h3>
+        <p>Una vez vencido el plazo de gracia, la cancelación queda a criterio del Prestador. CityProsMX puede mediar entre las partes, pero no garantiza el reembolso completo cuando:</p>
+        <ul>
+          <li>El Prestador ya inició su desplazamiento al domicilio</li>
+          <li>El Prestador ya compró materiales específicos para el trabajo</li>
+          <li>El Prestador ya bloqueó el horario para otros Clientes</li>
+        </ul>
+        <p>En estos casos, el Prestador puede retener una parte proporcional del monto pagado conforme al daño efectivamente sufrido, hasta un máximo del 30% del valor de la Cotización, salvo acuerdo distinto entre las partes.</p>
+
+        <h3>2.3 Tabla resumen de procedencia de reembolso</h3>
+        <table class="tabla-plazos">
+          <thead>
+            <tr>
+              <th>Momento de la cancelación</th>
+              <th>Procedencia</th>
+              <th>Monto reembolsado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Dentro del plazo de gracia configurado, prestador no iniciado desplazamiento</td>
+              <td><span class="badge-procede">Procede</span></td>
+              <td>100% del monto pagado</td>
+            </tr>
+            <tr>
+              <td>Después del plazo de gracia, antes del inicio del trabajo</td>
+              <td><span class="badge-condicional">A criterio</span></td>
+              <td>Variable, hasta 70% del monto pagado</td>
+            </tr>
+            <tr>
+              <td>Trabajo ya iniciado por el Prestador</td>
+              <td><span class="badge-no-procede">No procede</span></td>
+              <td>0% — El trabajo se completa o se factura proporcional</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="cancelacion-prestador">
+        <h2>3. Cancelación por el Prestador</h2>
+        <p><strong>3.1</strong> Si el Prestador cancela una Cotización ya aceptada, no se presenta al servicio acordado, o abandona el trabajo sin justificación, el Cliente tiene derecho a:</p>
+        <ul>
+          <li><strong>Reembolso completo</strong> del monto pagado, cuando aplique pago vía Stripe o SPEI confirmado en la Plataforma</li>
+          <li><strong>Reseña negativa</strong> al Prestador (sin que ello reemplace el reembolso)</li>
+          <li><strong>Reporte del incidente</strong> a CityProsMX para evaluación interna del Prestador</li>
+        </ul>
+        <p><strong>3.2</strong> Para activar el reembolso, el Cliente debe reportar el problema desde la Plataforma usando el botón "Hubo un problema — reportar" disponible en la pantalla de confirmación del trabajo. CityProsMX revisará el caso y procederá al reembolso si:</p>
+        <ul>
+          <li>Hay evidencia clara de que el Prestador canceló o no se presentó (mensajes en chat, ausencia de check-in, etc.)</li>
+          <li>El Cliente reporta dentro de las 48 horas siguientes a la fecha y hora acordadas para el servicio</li>
+        </ul>
+        <p><strong>3.3</strong> CityProsMX se reserva el derecho de aplicar sanciones al Prestador que cancele de manera reiterada, incluyendo la suspensión temporal o permanente de su cuenta, conforme a la Cláusula 16 de los <a href="/terminos">Términos y Condiciones</a>.</p>
+      </section>
+
+      <section id="trabajo-no-confirmado">
+        <h2>4. Trabajo no confirmado por el Cliente</h2>
+        <p>Si el Prestador realiza el trabajo pero el Cliente no responde ni confirma la finalización dentro de la Plataforma, aplican las siguientes reglas:</p>
+
+        <h3>4.1 Vencimiento del trabajo a los 7 días</h3>
+        <p>Si transcurren <strong>7 días naturales</strong> desde la fecha programada del servicio sin que el Cliente confirme su realización, y sin que tampoco haya reportado un problema, el sistema cancelará automáticamente el Trabajo:</p>
+        <ul>
+          <li><strong>Si el método de pago era tarjeta (Stripe):</strong> el cargo se cancela y, si ya se había procesado, se inicia un reembolso automático al Cliente</li>
+          <li><strong>Si el método de pago era SPEI o efectivo:</strong> CityProsMX no interviene; el Cliente y el Prestador deben coordinar directamente</li>
+        </ul>
+        <p>Esta regla protege al Cliente de cargos indebidos cuando el trabajo no se realizó, y al Prestador de cobros disputados sin evidencia oportuna.</p>
+
+        <div class="callout callout-warning">
+          <strong>Aviso al Prestador:</strong> si realizaste el trabajo pero el Cliente no lo confirma dentro de los primeros días, contacta al Cliente desde el chat de la Plataforma. Si el Cliente ya pagó en efectivo, coordina con él para evitar que el Trabajo se cancele automáticamente y se vuelva inelegible para reseña.
+        </div>
+      </section>
+
+      <section id="auto-completado">
+        <h2>5. Auto-completado del trabajo a las 48 horas</h2>
+        <p>Cuando el Prestador marca el trabajo como completado en la Plataforma y el Cliente no responde, aplica el siguiente flujo automático:</p>
+
+        <div class="flujo-pago">
+          <div class="flujo-step">
+            <div class="flujo-step-num">1</div>
+            <h4>Prestador marca completado</h4>
+            <p>El Prestador indica en la Plataforma que el trabajo terminó</p>
+          </div>
+          <div class="flujo-step">
+            <div class="flujo-step-num">2</div>
+            <h4>Cliente recibe aviso</h4>
+            <p>Notificación push y correo solicitando confirmar o reportar problema</p>
+          </div>
+          <div class="flujo-step">
+            <div class="flujo-step-num">3</div>
+            <h4>Ventana de 48 horas</h4>
+            <p>Cliente puede confirmar el servicio o reportar disputa</p>
+          </div>
+          <div class="flujo-step">
+            <div class="flujo-step-num">4</div>
+            <h4>Auto-confirmación</h4>
+            <p>Si no hay respuesta, el sistema confirma el trabajo automáticamente</p>
+          </div>
+        </div>
+
+        <h3>5.1 Consecuencias del auto-completado</h3>
+        <ul>
+          <li><strong>El pago se libera al Prestador</strong> (vía Stripe Connect si aplica)</li>
+          <li><strong>El Cliente sigue pudiendo dejar reseña</strong> sin penalización</li>
+          <li><strong>El Cliente conserva el derecho a disputar</strong> dentro de las 48 horas siguientes al auto-completado, si aparecen problemas no detectados al momento</li>
+        </ul>
+
+        <h3>5.2 Reporte de problema dentro de las 48 horas posteriores</h3>
+        <p>Aún después del auto-completado, el Cliente puede reportar un problema dentro de las 48 horas siguientes desde el botón correspondiente en la Plataforma. CityProsMX evaluará la disputa solicitando evidencia (fotografías, mensajes del chat, descripciones detalladas) y mediará entre las partes.</p>
+        <p>Si la disputa procede, CityProsMX puede gestionar el reembolso parcial o total al Cliente, descontándolo del saldo del Prestador conforme al mandato de la Cláusula 20 de los <a href="/terminos">Términos y Condiciones</a>.</p>
+      </section>
+
+      <section id="reembolsos-stripe">
+        <h2>6. Reembolsos por pagos con tarjeta (Stripe)</h2>
+        <p>Cuando el pago se realizó con tarjeta de crédito o débito a través de Stripe, CityProsMX puede gestionar el reembolso directamente desde su panel administrativo, conforme al mandato mercantil otorgado por el Prestador (Cláusula 20 de los <a href="/terminos">Términos y Condiciones</a>).</p>
+
+        <h3>6.1 Tipos de reembolso</h3>
+        <ul>
+          <li><strong>Reembolso completo:</strong> se devuelve el 100% del monto pagado por el Cliente, incluyendo las comisiones de Stripe que la red de pagos no retorna a CityProsMX. Aplica en cancelaciones dentro del plazo de gracia y en cancelaciones unilaterales del Prestador.</li>
+          <li><strong>Reembolso parcial:</strong> se devuelve solo una porción del monto pagado, calculada conforme al alcance del incumplimiento o al daño causado. Aplica cuando el trabajo se realizó parcialmente o cuando hay fallas específicas reconocidas.</li>
+          <li><strong>Sin reembolso:</strong> aplica cuando el trabajo se completó satisfactoriamente, cuando la disputa se reporta fuera de los plazos, o cuando la evidencia no respalda la reclamación del Cliente.</li>
+        </ul>
+
+        <h3>6.2 Tiempo de procesamiento</h3>
+        <p>Una vez aprobado el reembolso por CityProsMX:</p>
+        <ul>
+          <li>CityProsMX inicia el reembolso en Stripe dentro de los <strong>3 días hábiles</strong> siguientes</li>
+          <li>Stripe envía la instrucción al banco emisor de la tarjeta dentro de las <strong>24 horas</strong> siguientes</li>
+          <li>El banco emisor acredita el monto a la tarjeta del Cliente en un plazo de <strong>5 a 10 días hábiles</strong>, dependiendo de sus políticas internas</li>
+        </ul>
+        <p>El monto reembolsado aparece en el estado de cuenta de la tarjeta del Cliente como "REFUND" o "DEVOLUCIÓN" referenciando a "STRIPE *CityProsMX" o similar.</p>
+
+        <h3>6.3 Comisiones no reembolsables</h3>
+        <p>Las comisiones de procesamiento que Stripe cobra por la transacción original NO son devueltas a CityProsMX cuando se procesa un reembolso (regla operativa de Stripe vigente). En reembolsos completos, CityProsMX absorbe esta pérdida y entrega al Cliente el 100% del monto pagado. En reembolsos parciales por causa imputable al Prestador, este monto puede descontarse del saldo del Prestador conforme al mandato.</p>
+
+        <h3>6.4 Contracargos disputados directamente con el banco</h3>
+        <p>Si el Cliente disputa el cargo directamente con su banco emisor sin antes seguir el proceso de la Plataforma, Stripe iniciará un proceso de "chargeback". CityProsMX presentará la evidencia disponible (mensajes en chat, confirmación de servicio, fotos de portafolio del trabajo, etc.) ante la red de pagos. La adjudicación final corresponde a la red de pagos, no a CityProsMX.</p>
+        <p>Si el contracargo es adjudicado al Cliente, CityProsMX puede repetir el monto contra el saldo del Prestador conforme a la Cláusula 20.4 de los <a href="/terminos#mandato">Términos y Condiciones</a>.</p>
+      </section>
+
+      <section id="reembolsos-spei">
+        <h2>7. Reembolsos por SPEI (transferencia bancaria)</h2>
+        <p>Las transferencias SPEI se realizan directamente entre el Cliente y el Prestador. CityProsMX no es parte de la transferencia y no actúa como custodio de los fondos en este flujo.</p>
+
+        <h3>7.1 Procedimiento</h3>
+        <p>Cuando proceda un reembolso por una transferencia SPEI:</p>
+        <ol>
+          <li>El Cliente debe contactar al Prestador desde el chat de la Plataforma solicitando la devolución</li>
+          <li>El Prestador, una vez aceptada la procedencia del reembolso, debe realizar una transferencia SPEI al Cliente por el monto correspondiente</li>
+          <li>El Cliente proporciona al Prestador su CLABE de cuenta bancaria a través del chat de la Plataforma</li>
+          <li>El Prestador realiza la transferencia y comparte el comprobante en el chat</li>
+        </ol>
+
+        <h3>7.2 Mediación de CityProsMX</h3>
+        <p>Si el Prestador se niega a realizar el reembolso procedente, el Cliente puede reportar el caso a CityProsMX desde el botón "Hubo un problema — reportar" en la Plataforma. CityProsMX evaluará la evidencia y, si la disputa procede:</p>
+        <ul>
+          <li>Aplicará sanciones al Prestador conforme a la Cláusula 16 de los Términos</li>
+          <li>Podrá suspender temporalmente la cuenta del Prestador hasta que cumpla con la devolución</li>
+          <li>No puede ejecutar la transferencia directamente, pues no posee los fondos</li>
+        </ul>
+
+        <div class="callout callout-warning">
+          <strong>Recomendación al Cliente:</strong> para mayor protección, prefiere el pago con tarjeta vía Stripe en lugar de SPEI directo. Con tarjeta, CityProsMX puede ejecutar el reembolso directamente sin depender de la voluntad del Prestador.
+        </div>
+      </section>
+
+      <section id="pagos-efectivo">
+        <h2>8. Pagos en efectivo</h2>
+        <p>Los pagos en efectivo se realizan directamente entre el Cliente y el Prestador al momento de finalizar el servicio. CityProsMX no participa en la transacción, no recibe los fondos, no emite comprobantes y <strong>no puede gestionar reembolsos</strong> de pagos en efectivo.</p>
+
+        <h3>8.1 Disputas en pagos en efectivo</h3>
+        <p>Si surge una disputa sobre un pago en efectivo:</p>
+        <ul>
+          <li>Las partes deben resolverla directamente entre sí</li>
+          <li>CityProsMX puede actuar como mediador neutral a solicitud de cualquiera de las partes, sin carácter vinculante</li>
+          <li>El Cliente puede dejar reseña reflejando su experiencia</li>
+          <li>CityProsMX puede aplicar sanciones al Prestador en caso de fraude comprobado</li>
+        </ul>
+
+        <h3>8.2 Recomendaciones para pagos en efectivo</h3>
+        <ul>
+          <li>Solicita un comprobante o nota firmada por el Prestador al recibir el pago/realizar el pago</li>
+          <li>Toma fotografías del trabajo realizado antes y después</li>
+          <li>Conserva los mensajes del chat de la Plataforma como evidencia</li>
+        </ul>
+      </section>
+
+      <section id="suscripciones">
+        <h2>9. Reembolsos de suscripciones de Prestadores</h2>
+        <p>Los Prestadores pueden suscribirse a un Plan mensual de pago (Pro o Premium) para acceder a funcionalidades adicionales de la Plataforma. La política de reembolso de estas suscripciones es la siguiente:</p>
+
+        <h3>9.1 Suscripciones mensuales no son reembolsables</h3>
+        <p>Una vez iniciado el período mensual de la suscripción, el monto cobrado <strong>no es reembolsable</strong>, salvo en casos excepcionales evaluados individualmente por CityProsMX (por ejemplo, error en el cobro, suspensión técnica de la Plataforma por más de 7 días consecutivos, o falla material en el servicio que justifique la devolución).</p>
+
+        <h3>9.2 Cancelación de la suscripción</h3>
+        <p>El Prestador puede cancelar su suscripción en cualquier momento desde su perfil en la Aplicación. Al cancelar:</p>
+        <ul>
+          <li>No se cobrará el siguiente período mensual</li>
+          <li>El Prestador conservará acceso a las funcionalidades del Plan hasta el final del período ya pagado</li>
+          <li>Al concluir el período, la cuenta pasará automáticamente al Plan Básico (gratuito)</li>
+        </ul>
+
+        <h3>9.3 Plan de Fundadores</h3>
+        <p>Los Prestadores que recibieron 3 meses sin costo del Plan Pro como parte del programa de Fundadores conservan dicho beneficio aún si solicitan eliminación de cuenta y se reactivan posteriormente, salvo que CityProsMX modifique las condiciones del programa con notificación previa de 15 días.</p>
+
+        <h3>9.4 Cobros indebidos</h3>
+        <p>Si el Prestador detecta un cobro indebido (por ejemplo, doble cargo, cargo después de cancelar la suscripción, o cargo por monto incorrecto), debe contactar a CityProsMX dentro de los <strong>10 días naturales</strong> siguientes al cobro para iniciar la investigación. CityProsMX revisará los registros de Stripe y procederá al reembolso si el cobro indebido se confirma.</p>
+      </section>
+
+      <section id="contacto">
+        <h2>10. Cómo solicitar un reembolso</h2>
+        <p>Para iniciar una solicitud de reembolso o reportar un problema con un pago, sigue uno de estos canales según el caso:</p>
+
+        <h3>10.1 Desde la Aplicación (preferido)</h3>
+        <p>El método más rápido es usar el botón <strong>"Hubo un problema — reportar"</strong> disponible dentro del chat del Trabajo. Este botón:</p>
+        <ul>
+          <li>Captura automáticamente el contexto del Trabajo (ID, Prestador, monto, método de pago)</li>
+          <li>Te permite seleccionar el motivo y adjuntar evidencia (fotos, descripción)</li>
+          <li>Notifica al equipo de CityProsMX para revisión inmediata</li>
+        </ul>
+
+        <h3>10.2 Por correo electrónico</h3>
+        <p>Si por alguna razón no puedes usar el botón en la Aplicación, escríbenos a:</p>
+        <p><a href="mailto:elian.ayala02062000@gmail.com?subject=Solicitud%20de%20reembolso%20CityProsMX">elian.ayala02062000@gmail.com</a> con el asunto <strong>"Solicitud de reembolso"</strong> e incluye:</p>
+        <ul>
+          <li>Tu nombre completo y correo registrado en la Plataforma</li>
+          <li>ID del Trabajo afectado (visible en la sección "Mis trabajos" de la Aplicación)</li>
+          <li>Nombre del Prestador o del Cliente involucrado</li>
+          <li>Método de pago utilizado (tarjeta, SPEI o efectivo)</li>
+          <li>Monto pagado y fecha de la transacción</li>
+          <li>Descripción detallada del problema</li>
+          <li>Evidencia disponible (capturas del chat, fotos, comprobantes)</li>
+        </ul>
+
+        <h3>10.3 Tiempos de respuesta</h3>
+        <ul>
+          <li><strong>Acuse de recibo:</strong> dentro de las 24 horas hábiles</li>
+          <li><strong>Resolución del caso:</strong> dentro de los 5 días hábiles siguientes a la recepción de toda la evidencia necesaria</li>
+          <li><strong>Procesamiento del reembolso aprobado:</strong> dentro de los 3 días hábiles siguientes a la aprobación</li>
+          <li><strong>Acreditación al Cliente (caso Stripe):</strong> 5 a 10 días hábiles adicionales por la red bancaria</li>
+        </ul>
+
+        <h3>10.4 Escalamiento</h3>
+        <p>Si no estás satisfecho con la resolución de CityProsMX, puedes escalar el caso ante:</p>
+        <ul>
+          <li><strong>PROFECO:</strong> Procuraduría Federal del Consumidor — para reclamaciones bajo la Ley Federal de Protección al Consumidor</li>
+          <li><strong>CONDUSEF:</strong> Comisión Nacional para la Protección y Defensa de los Usuarios de Servicios Financieros — para disputas relacionadas con pagos electrónicos</li>
+          <li><strong>Banco emisor de tu tarjeta:</strong> para iniciar un proceso de contracargo formal</li>
+        </ul>
+
+        <p>CityProsMX colaborará de buena fe con cualquier autoridad o instancia que intervenga en una disputa, proporcionando la evidencia y registros que tenga disponibles.</p>
+      </section>
+
+    </main>
+
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="/">Inicio</a>
+      <a href="/terminos">Términos y Condiciones</a>
+      <a href="/privacidad">Aviso de Privacidad</a>
+      <a href="/eliminar-cuenta">Eliminar mi cuenta</a>
+      <a href="mailto:elian.ayala02062000@gmail.com">Contacto</a>
+    </div>
+    <p class="footer-copy">© 2026 CityProsMX · Guadalajara, Jalisco, México</p>
+  </footer>
+
+</body>
+</html>
